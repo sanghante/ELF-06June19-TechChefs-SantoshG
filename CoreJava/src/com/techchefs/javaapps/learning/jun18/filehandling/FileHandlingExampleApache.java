@@ -10,7 +10,6 @@ public class FileHandlingExampleApache {
 
 	public static void main(String[] args) {
 
-		
 		try {
 			FileUtils.writeStringToFile(new File("jun18_1.txt"), "My test file contents with default charset", Charset.defaultCharset());
 			

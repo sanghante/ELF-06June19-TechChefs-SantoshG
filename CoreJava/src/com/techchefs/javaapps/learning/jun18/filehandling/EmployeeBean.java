@@ -3,10 +3,35 @@ package com.techchefs.javaapps.learning.jun18.filehandling;
 import java.util.Date;
 
 public class EmployeeBean {
-	
+	/**
+	 * 
+	 */
 	public EmployeeBean() {
-		
+		super();
+		// TODO Auto-generated constructor stub
 	}
+	/**
+	 * @param id
+	 * @param name
+	 * @param department
+	 * @param salary
+	 * @param age
+	 * @param gender
+	 * @param dateOfJoining
+	 */
+	public EmployeeBean(int id, String name, String department, double salary, int age, String gender,
+			Date dateOfJoining) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.department = department;
+		this.salary = salary;
+		this.age = age;
+		this.gender = gender;
+		this.dateOfJoining = dateOfJoining;
+	}
+
+
 
 	private int id;
 	private String name;

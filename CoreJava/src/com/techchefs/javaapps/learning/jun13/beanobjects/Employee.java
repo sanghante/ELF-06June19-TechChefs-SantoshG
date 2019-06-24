@@ -1,6 +1,6 @@
 package com.techchefs.javaapps.learning.jun13.beanobjects;
 
-public class Employee {
+public class Employee implements Comparable<Employee>{
 
 	private String name;
 	private int employee_id;
@@ -23,6 +23,15 @@ public class Employee {
 	}
 	public void setGender(char gender) {
 		this.gender = gender;
+	}
+	
+	@Override
+	public int compareTo(Employee o) {
+
+		if (this.employee_id > o.employee_id) 
+			return 1;
+		
+		return 0;
 	}
 	
 	
