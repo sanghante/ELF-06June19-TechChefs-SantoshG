@@ -1,0 +1,28 @@
+Jun 17, 2019 12:05:26 PM com.santosh.DisplayProduct display
+SEVERE: Severe message captured in display
+Jun 17, 2019 12:05:41 PM com.santosh.DisplayProduct display
+SEVERE: Severe message captured in display
+Jun 17, 2019 12:05:42 PM com.santosh.DisplayProduct display
+SEVERE: Severe message captured in display
+Jun 17, 2019 12:05:43 PM com.santosh.DisplayProduct display
+SEVERE: Severe message captured in display
+Jun 17, 2019 12:05:44 PM com.santosh.DisplayProduct display
+SEVERE: Severe message captured in display
+Jun 17, 2019 12:05:44 PM com.santosh.DisplayProduct display
+SEVERE: Severe message captured in display
+Jun 17, 2019 12:07:41 PM com.santosh.DisplayProduct display
+SEVERE: Severe message captured in display
+Jun 17, 2019 12:08:00 PM com.santosh.TestLoggingTwo main
+INFO: created displayproduct object
+Jun 17, 2019 12:08:00 PM com.santosh.TestLoggingTwo main
+INFO: calling display method
+Jun 17, 2019 12:08:00 PM com.santosh.DisplayProduct display
+SEVERE: Severe message captured in display
+Jun 17, 2019 12:08:00 PM com.santosh.DisplayProduct display
+WARNING: Warning message captured in display
+Jun 17, 2019 12:08:00 PM com.santosh.DisplayProduct display
+INFO: Info message captured in display
+Jun 17, 2019 12:08:00 PM com.santosh.TestLoggingTwo main
+INFO: display successful
+Jun 17, 2019 12:08:00 PM com.santosh.TestLoggingTwo main
+INFO: Exiting main
