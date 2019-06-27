@@ -1,0 +1,448 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.17763}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9 Enter password: ****\par
+Welcome to the MySQL monitor.  Commands end with ; or \\g.\par
+Your MySQL connection id is 6\par
+Server version: 5.7.26-log MySQL Community Server (GPL)\par
+\par
+Copyright (c) 2000, 2019, Oracle and/or its affiliates. All rights reserved.\par
+\par
+Oracle is a registered trademark of Oracle Corporation and/or its\par
+affiliates. Other names may be trademarks of their respective\par
+owners.\par
+\par
+Type 'help;' or '\\h' for help. Type '\\c' to clear the current input statement.\par
+\par
+mysql> show databases\par
+    ->\par
+    ->\par
+    -> ;\par
++--------------------+\par
+| Database           |\par
++--------------------+\par
+| information_schema |\par
+| mysql              |\par
+| performance_schema |\par
+| sys                |\par
++--------------------+\par
+4 rows in set (0.00 sec)\par
+\par
+mysql> show table sys\par
+    -> ;\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'sys' at line 1\par
+mysql> show table mysql;\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'mysql' at line 1\par
+mysql> use mysql\par
+Database changed\par
+mysql> show tables\par
+    -> ;\par
++---------------------------+\par
+| Tables_in_mysql           |\par
++---------------------------+\par
+| columns_priv              |\par
+| db                        |\par
+| engine_cost               |\par
+| event                     |\par
+| func                      |\par
+| general_log               |\par
+| gtid_executed             |\par
+| help_category             |\par
+| help_keyword              |\par
+| help_relation             |\par
+| help_topic                |\par
+| innodb_index_stats        |\par
+| innodb_table_stats        |\par
+| ndb_binlog_index          |\par
+| plugin                    |\par
+| proc                      |\par
+| procs_priv                |\par
+| proxies_priv              |\par
+| server_cost               |\par
+| servers                   |\par
+| slave_master_info         |\par
+| slave_relay_log_info      |\par
+| slave_worker_info         |\par
+| slow_log                  |\par
+| tables_priv               |\par
+| time_zone                 |\par
+| time_zone_leap_second     |\par
+| time_zone_name            |\par
+| time_zone_transition      |\par
+| time_zone_transition_type |\par
+| user                      |\par
++---------------------------+\par
+31 rows in set (0.00 sec)\par
+\par
+mysql> create database test;\par
+Query OK, 1 row affected (0.00 sec)\par
+\par
+mysql> show database\par
+    -> ;\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'database' at line 1\par
+mysql> show databases;\par
++--------------------+\par
+| Database           |\par
++--------------------+\par
+| information_schema |\par
+| mysql              |\par
+| performance_schema |\par
+| sys                |\par
+| test               |\par
++--------------------+\par
+5 rows in set (0.00 sec)\par
+\par
+mysql> use test;\par
+Database changed\par
+mysql> show tables;\par
+Empty set (0.00 sec)\par
+\par
+mysql> create table student(id int, name varchar(100), address varchar(100));\par
+Query OK, 0 rows affected (0.28 sec)\par
+\par
+mysql> show table student\par
+    -> ;\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'student' at line 1\par
+mysql> show table student;\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'student' at line 1\par
+mysql> show tables\par
+    -> ;\par
++----------------+\par
+| Tables_in_test |\par
++----------------+\par
+| student        |\par
++----------------+\par
+1 row in set (0.00 sec)\par
+\par
+mysql> desc student;\par
++---------+--------------+------+-----+---------+-------+\par
+| Field   | Type         | Null | Key | Default | Extra |\par
++---------+--------------+------+-----+---------+-------+\par
+| id      | int(11)      | YES  |     | NULL    |       |\par
+| name    | varchar(100) | YES  |     | NULL    |       |\par
+| address | varchar(100) | YES  |     | NULL    |       |\par
++---------+--------------+------+-----+---------+-------+\par
+3 rows in set (0.01 sec)\par
+\par
+mysql> drop database test;\par
+Query OK, 1 row affected (0.27 sec)\par
+\par
+mysql> create database test;\par
+Query OK, 1 row affected (0.00 sec)\par
+\par
+mysql> create table student(id int, name varchar(100), address varchar(100));\par
+ERROR 1046 (3D000): No database selected\par
+mysql> use database test;\par
+ERROR 1049 (42000): Unknown database 'database'\par
+mysql> use test;\par
+Database changed\par
+mysql> create table student(id int, name varchar(100), address varchar(100));\par
+Query OK, 0 rows affected (0.23 sec)\par
+\par
+mysql> desc student\par
+    -> ;\par
++---------+--------------+------+-----+---------+-------+\par
+| Field   | Type         | Null | Key | Default | Extra |\par
++---------+--------------+------+-----+---------+-------+\par
+| id      | int(11)      | YES  |     | NULL    |       |\par
+| name    | varchar(100) | YES  |     | NULL    |       |\par
+| address | varchar(100) | YES  |     | NULL    |       |\par
++---------+--------------+------+-----+---------+-------+\par
+3 rows in set (0.01 sec)\par
+\par
+mysql> create table employee(id int, name varchar(30), salary int, job_desc varchar(100));\par
+Query OK, 0 rows affected (0.24 sec)\par
+\par
+mysql> desc employee\par
+    -> ;\par
++----------+--------------+------+-----+---------+-------+\par
+| Field    | Type         | Null | Key | Default | Extra |\par
++----------+--------------+------+-----+---------+-------+\par
+| id       | int(11)      | YES  |     | NULL    |       |\par
+| name     | varchar(30)  | YES  |     | NULL    |       |\par
+| salary   | int(11)      | YES  |     | NULL    |       |\par
+| job_desc | varchar(100) | YES  |     | NULL    |       |\par
++----------+--------------+------+-----+---------+-------+\par
+4 rows in set (0.01 sec)\par
+\par
+mysql> alter table employee change name name varchar(100);\par
+Query OK, 0 rows affected (0.15 sec)\par
+Records: 0  Duplicates: 0  Warnings: 0\par
+\par
+mysql> desc employee;\par
++----------+--------------+------+-----+---------+-------+\par
+| Field    | Type         | Null | Key | Default | Extra |\par
++----------+--------------+------+-----+---------+-------+\par
+| id       | int(11)      | YES  |     | NULL    |       |\par
+| name     | varchar(100) | YES  |     | NULL    |       |\par
+| salary   | int(11)      | YES  |     | NULL    |       |\par
+| job_desc | varchar(100) | YES  |     | NULL    |       |\par
++----------+--------------+------+-----+---------+-------+\par
+4 rows in set (0.00 sec)\par
+\par
+mysql> alter table employee add address varchar(250);\par
+Query OK, 0 rows affected (0.43 sec)\par
+Records: 0  Duplicates: 0  Warnings: 0\par
+\par
+mysql> desc table;\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table' at line 1\par
+mysql> desc employee;\par
++----------+--------------+------+-----+---------+-------+\par
+| Field    | Type         | Null | Key | Default | Extra |\par
++----------+--------------+------+-----+---------+-------+\par
+| id       | int(11)      | YES  |     | NULL    |       |\par
+| name     | varchar(100) | YES  |     | NULL    |       |\par
+| salary   | int(11)      | YES  |     | NULL    |       |\par
+| job_desc | varchar(100) | YES  |     | NULL    |       |\par
+| address  | varchar(250) | YES  |     | NULL    |       |\par
++----------+--------------+------+-----+---------+-------+\par
+5 rows in set (0.00 sec)\par
+\par
+mysql> alter table employee add deptno int;\par
+Query OK, 0 rows affected (0.48 sec)\par
+Records: 0  Duplicates: 0  Warnings: 0\par
+\par
+mysql> desc employee;\par
++----------+--------------+------+-----+---------+-------+\par
+| Field    | Type         | Null | Key | Default | Extra |\par
++----------+--------------+------+-----+---------+-------+\par
+| id       | int(11)      | YES  |     | NULL    |       |\par
+| name     | varchar(100) | YES  |     | NULL    |       |\par
+| salary   | int(11)      | YES  |     | NULL    |       |\par
+| job_desc | varchar(100) | YES  |     | NULL    |       |\par
+| address  | varchar(250) | YES  |     | NULL    |       |\par
+| deptno   | int(11)      | YES  |     | NULL    |       |\par
++----------+--------------+------+-----+---------+-------+\par
+6 rows in set (0.00 sec)\par
+\par
+mysql> alter table employee drop deptno int;\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'int' at line 1\par
+mysql> alter table employee drop deptno;\par
+Query OK, 0 rows affected (0.40 sec)\par
+Records: 0  Duplicates: 0  Warnings: 0\par
+\par
+mysql> desc employee;\par
++----------+--------------+------+-----+---------+-------+\par
+| Field    | Type         | Null | Key | Default | Extra |\par
++----------+--------------+------+-----+---------+-------+\par
+| id       | int(11)      | YES  |     | NULL    |       |\par
+| name     | varchar(100) | YES  |     | NULL    |       |\par
+| salary   | int(11)      | YES  |     | NULL    |       |\par
+| job_desc | varchar(100) | YES  |     | NULL    |       |\par
+| address  | varchar(250) | YES  |     | NULL    |       |\par
++----------+--------------+------+-----+---------+-------+\par
+5 rows in set (0.00 sec)\par
+\par
+mysql> rename table employee emp;\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'emp' at line 1\par
+mysql> rename employee emp;\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'employee emp' at line 1\par
+mysql> rename table employee to emp;\par
+Query OK, 0 rows affected (0.19 sec)\par
+\par
+mysql> desc emp;\par
++----------+--------------+------+-----+---------+-------+\par
+| Field    | Type         | Null | Key | Default | Extra |\par
++----------+--------------+------+-----+---------+-------+\par
+| id       | int(11)      | YES  |     | NULL    |       |\par
+| name     | varchar(100) | YES  |     | NULL    |       |\par
+| salary   | int(11)      | YES  |     | NULL    |       |\par
+| job_desc | varchar(100) | YES  |     | NULL    |       |\par
+| address  | varchar(250) | YES  |     | NULL    |       |\par
++----------+--------------+------+-----+---------+-------+\par
+5 rows in set (0.01 sec)\par
+\par
+mysql> drop table emp;\par
+Query OK, 0 rows affected (0.23 sec)\par
+\par
+mysql> show tables;\par
++----------------+\par
+| Tables_in_test |\par
++----------------+\par
+| student        |\par
++----------------+\par
+1 row in set (0.00 sec)\par
+\par
+mysql> create table emp(id int primary_key, name varchar(30) not null, salary int not null, job varchar(100) not null);\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'primary_key, name varchar(30) not null, salary int not null, job varchar(100) no' at line 1\par
+mysql> create table emp(id int primary key, name varchar(30) not null, salary int not null, job varchar(100) not null);\par
+Query OK, 0 rows affected (0.29 sec)\par
+\par
+mysql> desc emp;\par
++--------+--------------+------+-----+---------+-------+\par
+| Field  | Type         | Null | Key | Default | Extra |\par
++--------+--------------+------+-----+---------+-------+\par
+| id     | int(11)      | NO   | PRI | NULL    |       |\par
+| name   | varchar(30)  | NO   |     | NULL    |       |\par
+| salary | int(11)      | NO   |     | NULL    |       |\par
+| job    | varchar(100) | NO   |     | NULL    |       |\par
++--------+--------------+------+-----+---------+-------+\par
+4 rows in set (0.01 sec)\par
+\par
+mysql> insert into emp(1,'santosh',30000000, 'java developer');\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1,'santosh',30000000, 'java developer')' at line 1\par
+mysql> insert into emp values(1,'santosh',30000000, 'java developer');\par
+Query OK, 1 row affected (0.09 sec)\par
+\par
+mysql> select * from emp;\par
++----+---------+----------+----------------+\par
+| id | name    | salary   | job            |\par
++----+---------+----------+----------------+\par
+|  1 | santosh | 30000000 | java developer |\par
++----+---------+----------+----------------+\par
+1 row in set (0.00 sec)\par
+\par
+mysql> insert into emp(id, name, salary, job) values(1,'santosh',30000000, 'java developer');\par
+ERROR 1062 (23000): Duplicate entry '1' for key 'PRIMARY'\par
+mysql> insert into emp(id, name, salary, job) values(2,'shammi',2000000, 'java developer');\par
+Query OK, 1 row affected (0.06 sec)\par
+\par
+mysql> insert into emp(name, salary, job) values('rama',2000000, 'java developer');\par
+ERROR 1364 (HY000): Field 'id' doesn't have a default value\par
+mysql> insert into emp(id,name, salary, job) values(3, 'rama',2000000, 'java developer');\par
+Query OK, 1 row affected (0.13 sec)\par
+\par
+mysql> insert into emp(id,name, salary, job) values(4, 'bhima',1000000, 'java developer');\par
+Query OK, 1 row affected (0.13 sec)\par
+\par
+mysql> insert into emp(id,name, salary, job) values(5, 'soma',100000, 'java developer');\par
+Query OK, 1 row affected (0.13 sec)\par
+\par
+mysql> select * from emp;\par
++----+---------+----------+----------------+\par
+| id | name    | salary   | job            |\par
++----+---------+----------+----------------+\par
+|  1 | santosh | 30000000 | java developer |\par
+|  2 | shammi  |  2000000 | java developer |\par
+|  3 | rama    |  2000000 | java developer |\par
+|  4 | bhima   |  1000000 | java developer |\par
+|  5 | soma    |   100000 | java developer |\par
++----+---------+----------+----------------+\par
+5 rows in set (0.00 sec)\par
+\par
+mysql> update emp set salary 2500000 where id = 1\par
+    -> ;\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '2500000 where id = 1' at line 1\par
+mysql> update table emp set salary 2500000 where id = 1\par
+    -> ;\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table emp set salary 2500000 where id = 1' at line 1\par
+mysql> update emp set salary = 2500000 where id = 1\par
+    -> ;\par
+Query OK, 1 row affected (0.09 sec)\par
+Rows matched: 1  Changed: 1  Warnings: 0\par
+\par
+mysql> update emp set salary = 2500000 where id = 1;\par
+Query OK, 0 rows affected (0.13 sec)\par
+Rows matched: 1  Changed: 0  Warnings: 0\par
+\par
+mysql> select * from emp;\par
++----+---------+---------+----------------+\par
+| id | name    | salary  | job            |\par
++----+---------+---------+----------------+\par
+|  1 | santosh | 2500000 | java developer |\par
+|  2 | shammi  | 2000000 | java developer |\par
+|  3 | rama    | 2000000 | java developer |\par
+|  4 | bhima   | 1000000 | java developer |\par
+|  5 | soma    |  100000 | java developer |\par
++----+---------+---------+----------------+\par
+5 rows in set (0.00 sec)\par
+\par
+mysql> update emp set salary = 2500000\par
+    -> ;\par
+Query OK, 4 rows affected (0.13 sec)\par
+Rows matched: 5  Changed: 4  Warnings: 0\par
+\par
+mysql> select * from emp;\par
++----+---------+---------+----------------+\par
+| id | name    | salary  | job            |\par
++----+---------+---------+----------------+\par
+|  1 | santosh | 2500000 | java developer |\par
+|  2 | shammi  | 2500000 | java developer |\par
+|  3 | rama    | 2500000 | java developer |\par
+|  4 | bhima   | 2500000 | java developer |\par
+|  5 | soma    | 2500000 | java developer |\par
++----+---------+---------+----------------+\par
+5 rows in set (0.00 sec)\par
+\par
+mysql> update emp set salary = 2800000 where salary =2500000\par
+    -> ;\par
+Query OK, 5 rows affected (0.13 sec)\par
+Rows matched: 5  Changed: 5  Warnings: 0\par
+\par
+mysql> select * from emp;\par
++----+---------+---------+----------------+\par
+| id | name    | salary  | job            |\par
++----+---------+---------+----------------+\par
+|  1 | santosh | 2800000 | java developer |\par
+|  2 | shammi  | 2800000 | java developer |\par
+|  3 | rama    | 2800000 | java developer |\par
+|  4 | bhima   | 2800000 | java developer |\par
+|  5 | soma    | 2800000 | java developer |\par
++----+---------+---------+----------------+\par
+5 rows in set (0.00 sec)\par
+\par
+mysql> update emp set salary = 2800000, name='krishna' where id=2\par
+    -> ;\par
+Query OK, 1 row affected (0.13 sec)\par
+Rows matched: 1  Changed: 1  Warnings: 0\par
+\par
+mysql> select * from emp;\par
++----+---------+---------+----------------+\par
+| id | name    | salary  | job            |\par
++----+---------+---------+----------------+\par
+|  1 | santosh | 2800000 | java developer |\par
+|  2 | krishna | 2800000 | java developer |\par
+|  3 | rama    | 2800000 | java developer |\par
+|  4 | bhima   | 2800000 | java developer |\par
+|  5 | soma    | 2800000 | java developer |\par
++----+---------+---------+----------------+\par
+5 rows in set (0.00 sec)\par
+\par
+mysql> delete from emp where id = 5;\par
+Query OK, 1 row affected (0.09 sec)\par
+\par
+mysql> select * from emp;\par
++----+---------+---------+----------------+\par
+| id | name    | salary  | job            |\par
++----+---------+---------+----------------+\par
+|  1 | santosh | 2800000 | java developer |\par
+|  2 | krishna | 2800000 | java developer |\par
+|  3 | rama    | 2800000 | java developer |\par
+|  4 | bhima   | 2800000 | java developer |\par
++----+---------+---------+----------------+\par
+4 rows in set (0.00 sec)\par
+\par
+mysql> truncate table emp;\par
+Query OK, 0 rows affected (0.25 sec)\par
+\par
+mysql> select * from emp;\par
+Empty set (0.00 sec)\par
+\par
+mysql> select * from student;\par
+Empty set (0.00 sec)\par
+\par
+mysql> insert into emp(id,name, salary, job) values(3, 'rama',2000000, 'java developer');\par
+Query OK, 1 row affected (0.04 sec)\par
+\par
+mysql> insert into emp(id,name, salary, job) values(1, 'krishna',2000000, 'java developer');\par
+Query OK, 1 row affected (0.13 sec)\par
+\par
+mysql> insert into emp(id,name, salary, job) values(2, 'bhima',2000000, 'java developer');\par
+Query OK, 1 row affected (0.13 sec)\par
+\par
+mysql> insert into emp(id,name, salary, job) values(4, 'soma',2000000, 'java developer');\par
+Query OK, 1 row affected (0.07 sec)\par
+\par
+mysql> select * from emp;\par
++----+---------+---------+----------------+\par
+| id | name    | salary  | job            |\par
++----+---------+---------+----------------+\par
+|  1 | krishna | 2000000 | java developer |\par
+|  2 | bhima   | 2000000 | java developer |\par
+|  3 | rama    | 2000000 | java developer |\par
+|  4 | soma    | 2000000 | java developer |\par
++----+---------+---------+----------------+\par
+4 rows in set (0.00 sec)\par
+\par
+mysql>\par
+}
+ 

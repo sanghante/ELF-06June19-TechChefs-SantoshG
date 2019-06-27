@@ -1,0 +1,625 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\colortbl ;\red0\green0\blue255;}
+{\*\generator Riched20 10.0.17763}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9 Enter password: ****\par
+Welcome to the MySQL monitor.  Commands end with ; or \\g.\par
+Your MySQL connection id is 7\par
+Server version: 5.7.26-log MySQL Community Server (GPL)\par
+\par
+Copyright (c) 2000, 2019, Oracle and/or its affiliates. All rights reserved.\par
+\par
+Oracle is a registered trademark of Oracle Corporation and/or its\par
+affiliates. Other names may be trademarks of their respective\par
+owners.\par
+\par
+Type 'help;' or '\\h' for help. Type '\\c' to clear the current input statement.\par
+\par
+mysql> show databases\par
+    -> ;\par
++--------------------+\par
+| Database           |\par
++--------------------+\par
+| information_schema |\par
+| mysql              |\par
+| performance_schema |\par
+| sys                |\par
+| test               |\par
++--------------------+\par
+5 rows in set (0.07 sec)\par
+\par
+mysql> create database workspace\par
+    -> ;\par
+Query OK, 1 row affected (0.20 sec)\par
+\par
+mysql> show databases;\par
++--------------------+\par
+| Database           |\par
++--------------------+\par
+| information_schema |\par
+| mysql              |\par
+| performance_schema |\par
+| sys                |\par
+| test               |\par
+| workspace          |\par
++--------------------+\par
+6 rows in set (0.00 sec)\par
+\par
+mysql> create table employee(fname varchar(50), lname varchar(50), id int primary key, salary int, job_type varchar(30), dept_no int, email varchar(50));\par
+ERROR 1046 (3D000): No database selected\par
+mysql> use workspace\par
+Database changed\par
+mysql> create table employee(fname varchar(50), lname varchar(50), id int primary key, salary int, job_type varchar(30), dept_no int, email varchar(50));\par
+Query OK, 0 rows affected (0.57 sec)\par
+\par
+mysql> desc employee\par
+    -> ;\par
++----------+-------------+------+-----+---------+-------+\par
+| Field    | Type        | Null | Key | Default | Extra |\par
++----------+-------------+------+-----+---------+-------+\par
+| fname    | varchar(50) | YES  |     | NULL    |       |\par
+| lname    | varchar(50) | YES  |     | NULL    |       |\par
+| id       | int(11)     | NO   | PRI | NULL    |       |\par
+| salary   | int(11)     | YES  |     | NULL    |       |\par
+| job_type | varchar(30) | YES  |     | NULL    |       |\par
+| dept_no  | int(11)     | YES  |     | NULL    |       |\par
+| email    | varchar(50) | YES  |     | NULL    |       |\par
++----------+-------------+------+-----+---------+-------+\par
+7 rows in set (0.03 sec)\par
+\par
+mysql> desc employee;\par
++----------+-------------+------+-----+---------+-------+\par
+| Field    | Type        | Null | Key | Default | Extra |\par
++----------+-------------+------+-----+---------+-------+\par
+| fname    | varchar(50) | YES  |     | NULL    |       |\par
+| lname    | varchar(50) | YES  |     | NULL    |       |\par
+| id       | int(11)     | NO   | PRI | NULL    |       |\par
+| salary   | int(11)     | YES  |     | NULL    |       |\par
+| job_type | varchar(30) | YES  |     | NULL    |       |\par
+| dept_no  | int(11)     | YES  |     | NULL    |       |\par
+| email    | varchar(50) | YES  |     | NULL    |       |\par
++----------+-------------+------+-----+---------+-------+\par
+7 rows in set (0.00 sec)\par
+\par
+mysql> insert into employee values('Ram','Ikshvaku', 1 , 3000000, 'King', 1, 'rama.chandra@gmail.com');\par
+Query OK, 1 row affected (0.12 sec)\par
+\par
+mysql> insert into employee values('Seetha','Videha', 2 , 4000000, 'Queen', 2, 'seetha.lakshmi@gmail.com');\par
+Query OK, 1 row affected (0.11 sec)\par
+\par
+mysql> insert into employee values('Lakshmana','Ikshvaku', 3 , 2000000, 'Chaperone', 3, 'lakshmana.loyal@gmail.com');\par
+Query OK, 1 row affected (0.06 sec)\par
+\par
+mysql> insert into employee values('Anjaneya','Vayuputra', 4 , 1000000, 'Protector', 4, 'pavana.putra@gmail.com');\par
+Query OK, 1 row affected (0.13 sec)\par
+\par
+mysql> insert into employee values('Ravana','Lankesh', 5 , 10000000, 'King', 5, 'dashanan.ravan@gmail.com');\par
+Query OK, 1 row affected (0.13 sec)\par
+\par
+mysql> insert into employee values('Ramesha','Raita', 6 , 1000, 'Farmer', 6, 'badava.ramesha@gmail.com');\par
+Query OK, 1 row affected (0.13 sec)\par
+\par
+mysql> insert into employee values('Halka','Bolimaga', 6 , 2000, 'Dhobi', 6, 'halka.lkb@gmail.com');\par
+ERROR 1062 (23000): Duplicate entry '6' for key 'PRIMARY'\par
+mysql> insert into employee values('Halka','Bolimaga', 7 , 2000, 'Dhobi', 7, 'halka.lkb@gmail.com');\par
+Query OK, 1 row affected (0.13 sec)\par
+\par
+mysql> update employee set dept_no = 1 where id=5\par
+    -> ;\par
+Query OK, 1 row affected (0.17 sec)\par
+Rows matched: 1  Changed: 1  Warnings: 0\par
+\par
+mysql> update employee set dept_no = 1 where id=5;\par
+Query OK, 0 rows affected (0.03 sec)\par
+Rows matched: 1  Changed: 0  Warnings: 0\par
+\par
+mysql> select * from employee\par
+    -> ;\par
++-----------+-----------+----+----------+-----------+---------+---------------------------+\par
+| fname     | lname     | id | salary   | job_type  | dept_no | email                     |\par
++-----------+-----------+----+----------+-----------+---------+---------------------------+\par
+| Ram       | Ikshvaku  |  1 |  3000000 | King      |       1 | rama.chandra@gmail.com    |\par
+| Seetha    | Videha    |  2 |  4000000 | Queen     |       2 | seetha.lakshmi@gmail.com  |\par
+| Lakshmana | Ikshvaku  |  3 |  2000000 | Chaperone |       3 | lakshmana.loyal@gmail.com |\par
+| Anjaneya  | Vayuputra |  4 |  1000000 | Protector |       4 | pavana.putra@gmail.com    |\par
+| Ravana    | Lankesh   |  5 | 10000000 | King      |       1 | dashanan.ravan@gmail.com  |\par
+| Ramesha   | Raita     |  6 |     1000 | Farmer    |       6 | badava.ramesha@gmail.com  |\par
+| Halka     | Bolimaga  |  7 |     2000 | Dhobi     |       7 | halka.lkb@gmail.com       |\par
++-----------+-----------+----+----------+-----------+---------+---------------------------+\par
+7 rows in set (0.00 sec)\par
+\par
+mysql> select * from employee;\par
++-----------+-----------+----+----------+-----------+---------+---------------------------+\par
+| fname     | lname     | id | salary   | job_type  | dept_no | email                     |\par
++-----------+-----------+----+----------+-----------+---------+---------------------------+\par
+| Ram       | Ikshvaku  |  1 |  3000000 | King      |       1 | rama.chandra@gmail.com    |\par
+| Seetha    | Videha    |  2 |  4000000 | Queen     |       2 | seetha.lakshmi@gmail.com  |\par
+| Lakshmana | Ikshvaku  |  3 |  2000000 | Chaperone |       3 | lakshmana.loyal@gmail.com |\par
+| Anjaneya  | Vayuputra |  4 |  1000000 | Protector |       4 | pavana.putra@gmail.com    |\par
+| Ravana    | Lankesh   |  5 | 10000000 | King      |       1 | dashanan.ravan@gmail.com  |\par
+| Ramesha   | Raita     |  6 |     1000 | Farmer    |       6 | badava.ramesha@gmail.com  |\par
+| Halka     | Bolimaga  |  7 |     2000 | Dhobi     |       7 | halka.lkb@gmail.com       |\par
++-----------+-----------+----+----------+-----------+---------+---------------------------+\par
+7 rows in set (0.00 sec)\par
+\par
+mysql> select id, name, salary from employee;\par
+ERROR 1054 (42S22): Unknown column 'name' in 'field list'\par
+mysql> select id, fname, salary from employee;\par
++----+-----------+----------+\par
+| id | fname     | salary   |\par
++----+-----------+----------+\par
+|  1 | Ram       |  3000000 |\par
+|  2 | Seetha    |  4000000 |\par
+|  3 | Lakshmana |  2000000 |\par
+|  4 | Anjaneya  |  1000000 |\par
+|  5 | Ravana    | 10000000 |\par
+|  6 | Ramesha   |     1000 |\par
+|  7 | Halka     |     2000 |\par
++----+-----------+----------+\par
+7 rows in set (0.00 sec)\par
+\par
+mysql> select * from employee where salary > 3000\par
+    -> ;\par
++-----------+-----------+----+----------+-----------+---------+---------------------------+\par
+| fname     | lname     | id | salary   | job_type  | dept_no | email                     |\par
++-----------+-----------+----+----------+-----------+---------+---------------------------+\par
+| Ram       | Ikshvaku  |  1 |  3000000 | King      |       1 | rama.chandra@gmail.com    |\par
+| Seetha    | Videha    |  2 |  4000000 | Queen     |       2 | seetha.lakshmi@gmail.com  |\par
+| Lakshmana | Ikshvaku  |  3 |  2000000 | Chaperone |       3 | lakshmana.loyal@gmail.com |\par
+| Anjaneya  | Vayuputra |  4 |  1000000 | Protector |       4 | pavana.putra@gmail.com    |\par
+| Ravana    | Lankesh   |  5 | 10000000 | King      |       1 | dashanan.ravan@gmail.com  |\par
++-----------+-----------+----+----------+-----------+---------+---------------------------+\par
+5 rows in set (0.06 sec)\par
+\par
+mysql> select * from employee where salary > 3000;\par
++-----------+-----------+----+----------+-----------+---------+---------------------------+\par
+| fname     | lname     | id | salary   | job_type  | dept_no | email                     |\par
++-----------+-----------+----+----------+-----------+---------+---------------------------+\par
+| Ram       | Ikshvaku  |  1 |  3000000 | King      |       1 | rama.chandra@gmail.com    |\par
+| Seetha    | Videha    |  2 |  4000000 | Queen     |       2 | seetha.lakshmi@gmail.com  |\par
+| Lakshmana | Ikshvaku  |  3 |  2000000 | Chaperone |       3 | lakshmana.loyal@gmail.com |\par
+| Anjaneya  | Vayuputra |  4 |  1000000 | Protector |       4 | pavana.putra@gmail.com    |\par
+| Ravana    | Lankesh   |  5 | 10000000 | King      |       1 | dashanan.ravan@gmail.com  |\par
++-----------+-----------+----+----------+-----------+---------+---------------------------+\par
+5 rows in set (0.00 sec)\par
+\par
+mysql> select * from employee where id = 1;\par
++-------+----------+----+---------+----------+---------+------------------------+\par
+| fname | lname    | id | salary  | job_type | dept_no | email                  |\par
++-------+----------+----+---------+----------+---------+------------------------+\par
+| Ram   | Ikshvaku |  1 | 3000000 | King     |       1 | rama.chandra@gmail.com |\par
++-------+----------+----+---------+----------+---------+------------------------+\par
+1 row in set (0.06 sec)\par
+\par
+mysql> select * from employee where email is not null;\par
++-----------+-----------+----+----------+-----------+---------+---------------------------+\par
+| fname     | lname     | id | salary   | job_type  | dept_no | email                     |\par
++-----------+-----------+----+----------+-----------+---------+---------------------------+\par
+| Ram       | Ikshvaku  |  1 |  3000000 | King      |       1 | rama.chandra@gmail.com    |\par
+| Seetha    | Videha    |  2 |  4000000 | Queen     |       2 | seetha.lakshmi@gmail.com  |\par
+| Lakshmana | Ikshvaku  |  3 |  2000000 | Chaperone |       3 | lakshmana.loyal@gmail.com |\par
+| Anjaneya  | Vayuputra |  4 |  1000000 | Protector |       4 | pavana.putra@gmail.com    |\par
+| Ravana    | Lankesh   |  5 | 10000000 | King      |       1 | dashanan.ravan@gmail.com  |\par
+| Ramesha   | Raita     |  6 |     1000 | Farmer    |       6 | badava.ramesha@gmail.com  |\par
+| Halka     | Bolimaga  |  7 |     2000 | Dhobi     |       7 | halka.lkb@gmail.com       |\par
++-----------+-----------+----+----------+-----------+---------+---------------------------+\par
+7 rows in set (0.03 sec)\par
+\par
+mysql> select lname,dept_no,job_type from employee where id = 1;\par
++----------+---------+----------+\par
+| lname    | dept_no | job_type |\par
++----------+---------+----------+\par
+| Ikshvaku |       1 | King     |\par
++----------+---------+----------+\par
+1 row in set (0.00 sec)\par
+\par
+mysql> select lname,dept_no,job_type from employee where lname='Ikshvaku';\par
++----------+---------+-----------+\par
+| lname    | dept_no | job_type  |\par
++----------+---------+-----------+\par
+| Ikshvaku |       1 | King      |\par
+| Ikshvaku |       3 | Chaperone |\par
++----------+---------+-----------+\par
+2 rows in set (0.00 sec)\par
+\par
+mysql> select fname,email,job_type from employee where lname='Ikshvaku';\par
++-----------+---------------------------+-----------+\par
+| fname     | email                     | job_type  |\par
++-----------+---------------------------+-----------+\par
+| Ram       | rama.chandra@gmail.com    | King      |\par
+| Lakshmana | lakshmana.loyal@gmail.com | Chaperone |\par
++-----------+---------------------------+-----------+\par
+2 rows in set (0.00 sec)\par
+\par
+mysql> select fname as first_name,email as email_address,job_type from employee where lname='Ikshvaku';\par
++------------+---------------------------+-----------+\par
+| first_name | email_address             | job_type  |\par
++------------+---------------------------+-----------+\par
+| Ram        | rama.chandra@gmail.com    | King      |\par
+| Lakshmana  | lakshmana.loyal@gmail.com | Chaperone |\par
++------------+---------------------------+-----------+\par
+2 rows in set (0.00 sec)\par
+\par
+mysql> select fname as first_name,email as email_address, job_type from employee as e where lname='Ikshvaku';\par
++------------+---------------------------+-----------+\par
+| first_name | email_address             | job_type  |\par
++------------+---------------------------+-----------+\par
+| Ram        | rama.chandra@gmail.com    | King      |\par
+| Lakshmana  | lakshmana.loyal@gmail.com | Chaperone |\par
++------------+---------------------------+-----------+\par
+2 rows in set (0.00 sec)\par
+\par
+mysql> select fname first_name,email email_address, job_type from employee e where lname='Ikshvaku';\par
++------------+---------------------------+-----------+\par
+| first_name | email_address             | job_type  |\par
++------------+---------------------------+-----------+\par
+| Ram        | rama.chandra@gmail.com    | King      |\par
+| Lakshmana  | lakshmana.loyal@gmail.com | Chaperone |\par
++------------+---------------------------+-----------+\par
+2 rows in set (0.00 sec)\par
+\par
+mysql> select * from employee;\par
++-----------+-----------+----+----------+-----------+---------+---------------------------+\par
+| fname     | lname     | id | salary   | job_type  | dept_no | email                     |\par
++-----------+-----------+----+----------+-----------+---------+---------------------------+\par
+| Ram       | Ikshvaku  |  1 |  3000000 | King      |       1 | rama.chandra@gmail.com    |\par
+| Seetha    | Videha    |  2 |  4000000 | Queen     |       2 | seetha.lakshmi@gmail.com  |\par
+| Lakshmana | Ikshvaku  |  3 |  2000000 | Chaperone |       3 | lakshmana.loyal@gmail.com |\par
+| Anjaneya  | Vayuputra |  4 |  1000000 | Protector |       4 | pavana.putra@gmail.com    |\par
+| Ravana    | Lankesh   |  5 | 10000000 | King      |       1 | dashanan.ravan@gmail.com  |\par
+| Ramesha   | Raita     |  6 |     1000 | Farmer    |       6 | badava.ramesha@gmail.com  |\par
+| Halka     | Bolimaga  |  7 |     2000 | Dhobi     |       7 | halka.lkb@gmail.com       |\par
++-----------+-----------+----+----------+-----------+---------+---------------------------+\par
+7 rows in set (0.00 sec)\par
+\par
+mysql> select distinct lname from employee;\par
++-----------+\par
+| lname     |\par
++-----------+\par
+| Ikshvaku  |\par
+| Videha    |\par
+| Vayuputra |\par
+| Lankesh   |\par
+| Raita     |\par
+| Bolimaga  |\par
++-----------+\par
+6 rows in set (0.00 sec)\par
+\par
+mysql> select count(distinct lname) from employee;\par
++-----------------------+\par
+| count(distinct lname) |\par
++-----------------------+\par
+|                     6 |\par
++-----------------------+\par
+1 row in set (0.08 sec)\par
+\par
+mysql> select distinct lname, dept_no from employee;\par
++-----------+---------+\par
+| lname     | dept_no |\par
++-----------+---------+\par
+| Ikshvaku  |       1 |\par
+| Videha    |       2 |\par
+| Ikshvaku  |       3 |\par
+| Vayuputra |       4 |\par
+| Lankesh   |       1 |\par
+| Raita     |       6 |\par
+| Bolimaga  |       7 |\par
++-----------+---------+\par
+7 rows in set (0.00 sec)\par
+\par
+mysql> insert into employee values('Urmila','Lakshmana', 8 , 100000, 'Queen', 2, 'urmila.lonely@gmail.com');\par
+Query OK, 1 row affected (0.09 sec)\par
+\par
+mysql> select distinct lname, dept_no from employee;\par
++-----------+---------+\par
+| lname     | dept_no |\par
++-----------+---------+\par
+| Ikshvaku  |       1 |\par
+| Videha    |       2 |\par
+| Ikshvaku  |       3 |\par
+| Vayuputra |       4 |\par
+| Lankesh   |       1 |\par
+| Raita     |       6 |\par
+| Bolimaga  |       7 |\par
+| Lakshmana |       2 |\par
++-----------+---------+\par
+8 rows in set (0.00 sec)\par
+\par
+mysql> select count(distinct lname, dept_no) from employee;\par
++--------------------------------+\par
+| count(distinct lname, dept_no) |\par
++--------------------------------+\par
+|                              8 |\par
++--------------------------------+\par
+1 row in set (0.00 sec)\par
+\par
+mysql> select salary + 12345 as incremented_sal from employee;\par
++-----------------+\par
+| incremented_sal |\par
++-----------------+\par
+|         3012345 |\par
+|         4012345 |\par
+|         2012345 |\par
+|         1012345 |\par
+|        10012345 |\par
+|           13345 |\par
+|           14345 |\par
+|          112345 |\par
++-----------------+\par
+8 rows in set (0.06 sec)\par
+\par
+mysql> select salary * 12345 as incremented_sal from employee;\par
++-----------------+\par
+| incremented_sal |\par
++-----------------+\par
+|     37035000000 |\par
+|     49380000000 |\par
+|     24690000000 |\par
+|     12345000000 |\par
+|    123450000000 |\par
+|        12345000 |\par
+|        24690000 |\par
+|      1234500000 |\par
++-----------------+\par
+8 rows in set (0.00 sec)\par
+\par
+mysql> select salary * 12345 from employee;\par
++----------------+\par
+| salary * 12345 |\par
++----------------+\par
+|    37035000000 |\par
+|    49380000000 |\par
+|    24690000000 |\par
+|    12345000000 |\par
+|   123450000000 |\par
+|       12345000 |\par
+|       24690000 |\par
+|     1234500000 |\par
++----------------+\par
+8 rows in set (0.00 sec)\par
+\par
+mysql> select id, fname, salary, salary + 12345 as hike from employee;\par
++----+-----------+----------+----------+\par
+| id | fname     | salary   | hike     |\par
++----+-----------+----------+----------+\par
+|  1 | Ram       |  3000000 |  3012345 |\par
+|  2 | Seetha    |  4000000 |  4012345 |\par
+|  3 | Lakshmana |  2000000 |  2012345 |\par
+|  4 | Anjaneya  |  1000000 |  1012345 |\par
+|  5 | Ravana    | 10000000 | 10012345 |\par
+|  6 | Ramesha   |     1000 |    13345 |\par
+|  7 | Halka     |     2000 |    14345 |\par
+|  8 | Urmila    |   100000 |   112345 |\par
++----+-----------+----------+----------+\par
+8 rows in set (0.00 sec)\par
+\par
+mysql> select id, fname, salary, salary * 1.1 as hike from employee;\par
++----+-----------+----------+------------+\par
+| id | fname     | salary   | hike       |\par
++----+-----------+----------+------------+\par
+|  1 | Ram       |  3000000 |  3300000.0 |\par
+|  2 | Seetha    |  4000000 |  4400000.0 |\par
+|  3 | Lakshmana |  2000000 |  2200000.0 |\par
+|  4 | Anjaneya  |  1000000 |  1100000.0 |\par
+|  5 | Ravana    | 10000000 | 11000000.0 |\par
+|  6 | Ramesha   |     1000 |     1100.0 |\par
+|  7 | Halka     |     2000 |     2200.0 |\par
+|  8 | Urmila    |   100000 |   110000.0 |\par
++----+-----------+----------+------------+\par
+8 rows in set (0.00 sec)\par
+\par
+mysql> select id, fname, salary, salary * 1.1  from employee;\par
++----+-----------+----------+--------------+\par
+| id | fname     | salary   | salary * 1.1 |\par
++----+-----------+----------+--------------+\par
+|  1 | Ram       |  3000000 |    3300000.0 |\par
+|  2 | Seetha    |  4000000 |    4400000.0 |\par
+|  3 | Lakshmana |  2000000 |    2200000.0 |\par
+|  4 | Anjaneya  |  1000000 |    1100000.0 |\par
+|  5 | Ravana    | 10000000 |   11000000.0 |\par
+|  6 | Ramesha   |     1000 |       1100.0 |\par
+|  7 | Halka     |     2000 |       2200.0 |\par
+|  8 | Urmila    |   100000 |     110000.0 |\par
++----+-----------+----------+--------------+\par
+8 rows in set (0.00 sec)\par
+\par
+mysql> select id, fname, salary, salary * 1.1 as hike from employee;\par
++----+-----------+----------+------------+\par
+| id | fname     | salary   | hike       |\par
++----+-----------+----------+------------+\par
+|  1 | Ram       |  3000000 |  3300000.0 |\par
+|  2 | Seetha    |  4000000 |  4400000.0 |\par
+|  3 | Lakshmana |  2000000 |  2200000.0 |\par
+|  4 | Anjaneya  |  1000000 |  1100000.0 |\par
+|  5 | Ravana    | 10000000 | 11000000.0 |\par
+|  6 | Ramesha   |     1000 |     1100.0 |\par
+|  7 | Halka     |     2000 |     2200.0 |\par
+|  8 | Urmila    |   100000 |   110000.0 |\par
++----+-----------+----------+------------+\par
+8 rows in set (0.00 sec)\par
+\par
+mysql> select * from employee where salary > 10000\par
+    ->\par
+    -> ;\par
++-----------+-----------+----+----------+-----------+---------+---------------------------+\par
+| fname     | lname     | id | salary   | job_type  | dept_no | email                     |\par
++-----------+-----------+----+----------+-----------+---------+---------------------------+\par
+| Ram       | Ikshvaku  |  1 |  3000000 | King      |       1 | rama.chandra@gmail.com    |\par
+| Seetha    | Videha    |  2 |  4000000 | Queen     |       2 | seetha.lakshmi@gmail.com  |\par
+| Lakshmana | Ikshvaku  |  3 |  2000000 | Chaperone |       3 | lakshmana.loyal@gmail.com |\par
+| Anjaneya  | Vayuputra |  4 |  1000000 | Protector |       4 | pavana.putra@gmail.com    |\par
+| Ravana    | Lankesh   |  5 | 10000000 | King      |       1 | dashanan.ravan@gmail.com  |\par
+| Urmila    | Lakshmana |  8 |   100000 | Queen     |       2 | urmila.lonely@gmail.com   |\par
++-----------+-----------+----+----------+-----------+---------+---------------------------+\par
+6 rows in set (0.00 sec)\par
+\par
+mysql> select * from employee where salary > 10000;\par
++-----------+-----------+----+----------+-----------+---------+---------------------------+\par
+| fname     | lname     | id | salary   | job_type  | dept_no | email                     |\par
++-----------+-----------+----+----------+-----------+---------+---------------------------+\par
+| Ram       | Ikshvaku  |  1 |  3000000 | King      |       1 | rama.chandra@gmail.com    |\par
+| Seetha    | Videha    |  2 |  4000000 | Queen     |       2 | seetha.lakshmi@gmail.com  |\par
+| Lakshmana | Ikshvaku  |  3 |  2000000 | Chaperone |       3 | lakshmana.loyal@gmail.com |\par
+| Anjaneya  | Vayuputra |  4 |  1000000 | Protector |       4 | pavana.putra@gmail.com    |\par
+| Ravana    | Lankesh   |  5 | 10000000 | King      |       1 | dashanan.ravan@gmail.com  |\par
+| Urmila    | Lakshmana |  8 |   100000 | Queen     |       2 | urmila.lonely@gmail.com   |\par
++-----------+-----------+----+----------+-----------+---------+---------------------------+\par
+6 rows in set (0.00 sec)\par
+\par
+mysql> select * from employee where salary > 10000 and dept_no = 1\par
+    -> ;\par
++--------+----------+----+----------+----------+---------+--------------------------+\par
+| fname  | lname    | id | salary   | job_type | dept_no | email                    |\par
++--------+----------+----+----------+----------+---------+--------------------------+\par
+| Ram    | Ikshvaku |  1 |  3000000 | King     |       1 | rama.chandra@gmail.com   |\par
+| Ravana | Lankesh  |  5 | 10000000 | King     |       1 | dashanan.ravan@gmail.com |\par
++--------+----------+----+----------+----------+---------+--------------------------+\par
+2 rows in set (0.00 sec)\par
+\par
+mysql> select * from employee where salary <> 10000 and dept_no = 1\par
+    -> ;\par
++--------+----------+----+----------+----------+---------+--------------------------+\par
+| fname  | lname    | id | salary   | job_type | dept_no | email                    |\par
++--------+----------+----+----------+----------+---------+--------------------------+\par
+| Ram    | Ikshvaku |  1 |  3000000 | King     |       1 | rama.chandra@gmail.com   |\par
+| Ravana | Lankesh  |  5 | 10000000 | King     |       1 | dashanan.ravan@gmail.com |\par
++--------+----------+----+----------+----------+---------+--------------------------+\par
+2 rows in set (0.00 sec)\par
+\par
+mysql> select * from employee where salary <! 10000 and dept_no = 1\par
+    -> ;\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '<! 10000 and dept_no = 1' at line 1\par
+mysql> select * from employee where salary !< 10000 and dept_no = 1\par
+    -> ;\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '!< 10000 and dept_no = 1' at line 1\par
+mysql> create table random_data(id int, name varchar(20), website_1 varchar(100), website_2 varchar(100));\par
+Query OK, 0 rows affected (0.26 sec)\par
+\par
+mysql> insert into random_data values(1, 'one', '{{\field{\*\fldinst{HYPERLINK www.gmail.com }}{\fldrslt{www.gmail.com\ul0\cf0}}}}\f0\fs22 ', '{{\field{\*\fldinst{HYPERLINK www.yahoo.com }}{\fldrslt{www.yahoo.com\ul0\cf0}}}}\f0\fs22 ');\par
+Query OK, 1 row affected (0.05 sec)\par
+\par
+mysql> insert into random_data values(1, 'two');\par
+ERROR 1136 (21S01): Column count doesn't match value count at row 1\par
+mysql> insert into random_data values(1, 'two',,);\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1\par
+mysql> insert into random_data values(1, 'two',null,null);\par
+Query OK, 1 row affected (0.14 sec)\par
+\par
+mysql> select * from random_data;\par
++------+------+---------------+---------------+\par
+| id   | name | website_1     | website_2     |\par
++------+------+---------------+---------------+\par
+|    1 | one  | {{\field{\*\fldinst{HYPERLINK www.gmail.com }}{\fldrslt{www.gmail.com\ul0\cf0}}}}\f0\fs22  | {{\field{\*\fldinst{HYPERLINK www.yahoo.com }}{\fldrslt{www.yahoo.com\ul0\cf0}}}}\f0\fs22  |\par
+|    1 | two  | NULL          | NULL          |\par
++------+------+---------------+---------------+\par
+2 rows in set (0.00 sec)\par
+\par
+mysql> select * from random_data where website_1 <=> website_2;\par
++------+------+-----------+-----------+\par
+| id   | name | website_1 | website_2 |\par
++------+------+-----------+-----------+\par
+|    1 | two  | NULL      | NULL      |\par
++------+------+-----------+-----------+\par
+1 row in set (0.00 sec)\par
+\par
+mysql> select * from random_data where website_1 <=> website_2 and id=1;\par
++------+------+-----------+-----------+\par
+| id   | name | website_1 | website_2 |\par
++------+------+-----------+-----------+\par
+|    1 | two  | NULL      | NULL      |\par
++------+------+-----------+-----------+\par
+1 row in set (0.00 sec)\par
+\par
+mysql> select * from random_data where website_1 <=> website_2 or id=1;\par
++------+------+---------------+---------------+\par
+| id   | name | website_1     | website_2     |\par
++------+------+---------------+---------------+\par
+|    1 | one  | {{\field{\*\fldinst{HYPERLINK www.gmail.com }}{\fldrslt{www.gmail.com\ul0\cf0}}}}\f0\fs22  | {{\field{\*\fldinst{HYPERLINK www.yahoo.com }}{\fldrslt{www.yahoo.com\ul0\cf0}}}}\f0\fs22  |\par
+|    1 | two  | NULL          | NULL          |\par
++------+------+---------------+---------------+\par
+2 rows in set (0.00 sec)\par
+\par
+mysql> select * from random_data where NOT website_1 <=> website_2\par
+    -> ;\par
++------+------+---------------+---------------+\par
+| id   | name | website_1     | website_2     |\par
++------+------+---------------+---------------+\par
+|    1 | one  | {{\field{\*\fldinst{HYPERLINK www.gmail.com }}{\fldrslt{www.gmail.com\ul0\cf0}}}}\f0\fs22  | {{\field{\*\fldinst{HYPERLINK www.yahoo.com }}{\fldrslt{www.yahoo.com\ul0\cf0}}}}\f0\fs22  |\par
++------+------+---------------+---------------+\par
+1 row in set (0.06 sec)\par
+\par
+mysql> select * from random_data where NOT website_1 <=> website_2 ;\par
++------+------+---------------+---------------+\par
+| id   | name | website_1     | website_2     |\par
++------+------+---------------+---------------+\par
+|    1 | one  | {{\field{\*\fldinst{HYPERLINK www.gmail.com }}{\fldrslt{www.gmail.com\ul0\cf0}}}}\f0\fs22  | {{\field{\*\fldinst{HYPERLINK www.yahoo.com }}{\fldrslt{www.yahoo.com\ul0\cf0}}}}\f0\fs22  |\par
++------+------+---------------+---------------+\par
+1 row in set (0.00 sec)\par
+\par
+mysql> select * from employee where job_type in ('King','Queen');\par
++--------+-----------+----+----------+----------+---------+--------------------------+\par
+| fname  | lname     | id | salary   | job_type | dept_no | email                    |\par
++--------+-----------+----+----------+----------+---------+--------------------------+\par
+| Ram    | Ikshvaku  |  1 |  3000000 | King     |       1 | rama.chandra@gmail.com   |\par
+| Seetha | Videha    |  2 |  4000000 | Queen    |       2 | seetha.lakshmi@gmail.com |\par
+| Ravana | Lankesh   |  5 | 10000000 | King     |       1 | dashanan.ravan@gmail.com |\par
+| Urmila | Lakshmana |  8 |   100000 | Queen    |       2 | urmila.lonely@gmail.com  |\par
++--------+-----------+----+----------+----------+---------+--------------------------+\par
+4 rows in set (0.00 sec)\par
+\par
+mysql> select * from employee where job_type not in ('King','Queen');\par
++-----------+-----------+----+---------+-----------+---------+---------------------------+\par
+| fname     | lname     | id | salary  | job_type  | dept_no | email                     |\par
++-----------+-----------+----+---------+-----------+---------+---------------------------+\par
+| Lakshmana | Ikshvaku  |  3 | 2000000 | Chaperone |       3 | lakshmana.loyal@gmail.com |\par
+| Anjaneya  | Vayuputra |  4 | 1000000 | Protector |       4 | pavana.putra@gmail.com    |\par
+| Ramesha   | Raita     |  6 |    1000 | Farmer    |       6 | badava.ramesha@gmail.com  |\par
+| Halka     | Bolimaga  |  7 |    2000 | Dhobi     |       7 | halka.lkb@gmail.com       |\par
++-----------+-----------+----+---------+-----------+---------+---------------------------+\par
+4 rows in set (0.00 sec)\par
+\par
+mysql> select * from employee where job_type in (1,2,3);\par
+Empty set, 8 warnings (0.05 sec)\par
+\par
+mysql> select * from employee where dept_no in (1,2,3);\par
++-----------+-----------+----+----------+-----------+---------+---------------------------+\par
+| fname     | lname     | id | salary   | job_type  | dept_no | email                     |\par
++-----------+-----------+----+----------+-----------+---------+---------------------------+\par
+| Ram       | Ikshvaku  |  1 |  3000000 | King      |       1 | rama.chandra@gmail.com    |\par
+| Seetha    | Videha    |  2 |  4000000 | Queen     |       2 | seetha.lakshmi@gmail.com  |\par
+| Lakshmana | Ikshvaku  |  3 |  2000000 | Chaperone |       3 | lakshmana.loyal@gmail.com |\par
+| Ravana    | Lankesh   |  5 | 10000000 | King      |       1 | dashanan.ravan@gmail.com  |\par
+| Urmila    | Lakshmana |  8 |   100000 | Queen     |       2 | urmila.lonely@gmail.com   |\par
++-----------+-----------+----+----------+-----------+---------+---------------------------+\par
+5 rows in set (0.00 sec)\par
+\par
+mysql> select * from employee where dept_no in (1,2,3) and fname like '%am%';\par
++-------+----------+----+---------+----------+---------+------------------------+\par
+| fname | lname    | id | salary  | job_type | dept_no | email                  |\par
++-------+----------+----+---------+----------+---------+------------------------+\par
+| Ram   | Ikshvaku |  1 | 3000000 | King     |       1 | rama.chandra@gmail.com |\par
++-------+----------+----+---------+----------+---------+------------------------+\par
+1 row in set (0.00 sec)\par
+\par
+mysql> select * from employee where salary between 2000000 and 3000000;\par
++-----------+----------+----+---------+-----------+---------+---------------------------+\par
+| fname     | lname    | id | salary  | job_type  | dept_no | email                     |\par
++-----------+----------+----+---------+-----------+---------+---------------------------+\par
+| Ram       | Ikshvaku |  1 | 3000000 | King      |       1 | rama.chandra@gmail.com    |\par
+| Lakshmana | Ikshvaku |  3 | 2000000 | Chaperone |       3 | lakshmana.loyal@gmail.com |\par
++-----------+----------+----+---------+-----------+---------+---------------------------+\par
+2 rows in set (0.00 sec)\par
+\par
+mysql> select * from employee where salary between 2000000 and 100000000;\par
++-----------+----------+----+----------+-----------+---------+---------------------------+\par
+| fname     | lname    | id | salary   | job_type  | dept_no | email                     |\par
++-----------+----------+----+----------+-----------+---------+---------------------------+\par
+| Ram       | Ikshvaku |  1 |  3000000 | King      |       1 | rama.chandra@gmail.com    |\par
+| Seetha    | Videha   |  2 |  4000000 | Queen     |       2 | seetha.lakshmi@gmail.com  |\par
+| Lakshmana | Ikshvaku |  3 |  2000000 | Chaperone |       3 | lakshmana.loyal@gmail.com |\par
+| Ravana    | Lankesh  |  5 | 10000000 | King      |       1 | dashanan.ravan@gmail.com  |\par
++-----------+----------+----+----------+-----------+---------+---------------------------+\par
+4 rows in set (0.00 sec)\par
+\par
+mysql>\par
+}
+ 

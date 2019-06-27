@@ -1,17 +1,17 @@
 package com.techchefs.javaapps.learning.sortingwithcomparable;
 
 public class Product implements Comparable<Product> {
-	
+
 	private String name;
 	private int cost;
 	private double rating;
-	
+
 	Product(String n, int cost, double r) {
 		this.name = n;
 		this.cost = cost;
 		this.rating = r;
 	}
-	
+
 	public String getName() {
 		return name;
 	}
@@ -36,12 +36,11 @@ public class Product implements Comparable<Product> {
 		this.rating = rating;
 	}
 
-
 	@Override
 	public int compareTo(Product o) {
 
-		return -1*((Double)this.rating).compareTo(o.rating) ; 
-		//descending order
+		return -1 * ((Double) this.rating).compareTo(o.rating);
+		// descending order
 	}
 
 	@Override
@@ -82,6 +81,4 @@ public class Product implements Comparable<Product> {
 		return "Product [name=" + name + ", cost=" + cost + ", rating=" + rating + "]";
 	}
 
-	
-	
 }

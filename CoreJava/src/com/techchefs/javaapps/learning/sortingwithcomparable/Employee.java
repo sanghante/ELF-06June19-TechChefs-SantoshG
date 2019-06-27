@@ -70,7 +70,7 @@ public class Employee {
 	
 }
 
-
+/*
 class EmployeeByID implements Comparator<Employee> {
 
 	@Override
@@ -99,4 +99,4 @@ class EmployeeByName implements Comparator<Employee> {
 		return name.compareTo(o2.getName());
 	}
 	
-}
+}*/
