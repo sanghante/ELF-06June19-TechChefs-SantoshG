@@ -10,11 +10,22 @@ public class TestEmployeeWithComparator {
 		
 		Comparator<Employee> comparator = null;
 		
-		comparator = new EmployeeByID();
-		comparator = new EmployeeByName();
-		comparator = new EmployeeBySalary();
+		//comparator = new EmployeeByID();
+		//comparator = new EmployeeByName();
+		//comparator = new EmployeeBySalary();
 		
-		Set<Employee> set = new TreeSet<>(comparator);
+		comparator = (e1, e2) -> {
+			if (e1.getId() > e2.getId()) 
+				return 1;
+			else if (e1.getId() < e2.getId())
+				return -1;
+			else 
+				return 0;
+		};
+		
+		comparator = (e1, e2) -> e1.getName().compareTo(e2.getName());
+		
+		Set<Employee> set = new TreeSet<Employee>(comparator);
 		
 		set.add(new Employee("Amit", 2, 15000));
 		set.add(new Employee("Deepa", 1, 25000));

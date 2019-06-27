@@ -8,7 +8,9 @@ public class TestConstructorReference {
 	public static void main(String[] args) {
 		
 		PenFactory pFactory = Pen :: new ;
-		pFactory.getPen();
+		
+		Pen p = pFactory.getPen();
+		p.write();
 		
 		MyBoy boy = Boy :: new ;
 		Boy ramu = boy.getBoy(12, "Ramu", 155.5);

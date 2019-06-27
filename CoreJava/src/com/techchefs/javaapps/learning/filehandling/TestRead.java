@@ -17,6 +17,7 @@ public class TestRead {
 			
 			fileInputStream = new FileInputStream("san.txt");
 			fr = new FileReader("san.txt");
+			
 			while ( (i=fileInputStream.read()) != -1) {
 				System.out.print((char)i);
 			}
