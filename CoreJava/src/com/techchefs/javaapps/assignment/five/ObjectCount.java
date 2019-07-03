@@ -10,7 +10,6 @@ public class ObjectCount {
 	
 	@Override
 	protected void finalize() throws Throwable {
-		// TODO Auto-generated method stub
 		super.finalize();
 		counter--;
 	}
@@ -33,10 +32,15 @@ public class ObjectCount {
 		
 		System.out.println(getInstanceCount());
 		
-		new ObjectCount();
+		ObjectCount a = new ObjectCount();
+		a = null;
 		
-		for(int i=0;i<100000;i++) {
-			
+		for(int i=0;i<10;i++) {
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 		}
 		
 		System.out.println(getInstanceCount());

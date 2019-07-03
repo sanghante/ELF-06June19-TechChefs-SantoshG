@@ -1,0 +1,42 @@
+Jun 28, 2019 10:25:38 AM com.techchefs.javaapps.learning.logging.TestLoggingTwo main
+INFO: created displayproduct object
+Jun 28, 2019 10:25:38 AM com.techchefs.javaapps.learning.logging.TestLoggingTwo main
+INFO: calling display method
+Jun 28, 2019 10:25:38 AM com.techchefs.javaapps.learning.logging.DisplayProduct display
+SEVERE: Severe message captured in display
+Jun 28, 2019 10:25:38 AM com.techchefs.javaapps.learning.logging.DisplayProduct display
+WARNING: Warning message captured in display
+Jun 28, 2019 10:25:38 AM com.techchefs.javaapps.learning.logging.DisplayProduct display
+INFO: Info message captured in display
+Jun 28, 2019 10:25:38 AM com.techchefs.javaapps.learning.logging.TestLoggingTwo main
+INFO: display successful
+Jun 28, 2019 10:25:38 AM com.techchefs.javaapps.learning.logging.TestLoggingTwo main
+INFO: Exiting main
+Jun 28, 2019 10:25:42 AM com.techchefs.javaapps.learning.logging.TestLoggingTwo main
+INFO: created displayproduct object
+Jun 28, 2019 10:25:42 AM com.techchefs.javaapps.learning.logging.TestLoggingTwo main
+INFO: calling display method
+Jun 28, 2019 10:25:42 AM com.techchefs.javaapps.learning.logging.DisplayProduct display
+SEVERE: Severe message captured in display
+Jun 28, 2019 10:25:42 AM com.techchefs.javaapps.learning.logging.DisplayProduct display
+WARNING: Warning message captured in display
+Jun 28, 2019 10:25:42 AM com.techchefs.javaapps.learning.logging.DisplayProduct display
+INFO: Info message captured in display
+Jun 28, 2019 10:25:42 AM com.techchefs.javaapps.learning.logging.TestLoggingTwo main
+INFO: display successful
+Jun 28, 2019 10:25:42 AM com.techchefs.javaapps.learning.logging.TestLoggingTwo main
+INFO: Exiting main
+Jun 28, 2019 10:25:50 AM com.techchefs.javaapps.learning.logging.TestLoggingTwo main
+INFO: created displayproduct object
+Jun 28, 2019 10:25:50 AM com.techchefs.javaapps.learning.logging.TestLoggingTwo main
+INFO: calling display method
+Jun 28, 2019 10:25:50 AM com.techchefs.javaapps.learning.logging.DisplayProduct display
+SEVERE: Severe message captured in display
+Jun 28, 2019 10:25:50 AM com.techchefs.javaapps.learning.logging.DisplayProduct display
+WARNING: Warning message captured in display
+Jun 28, 2019 10:25:50 AM com.techchefs.javaapps.learning.logging.DisplayProduct display
+INFO: Info message captured in display
+Jun 28, 2019 10:25:50 AM com.techchefs.javaapps.learning.logging.TestLoggingTwo main
+INFO: display successful
+Jun 28, 2019 10:25:50 AM com.techchefs.javaapps.learning.logging.TestLoggingTwo main
+INFO: Exiting main

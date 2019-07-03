@@ -8,7 +8,7 @@ public class TestJavaArrays {
 	public static void main(String[] args) {
 
 		
-		int[] arr = new int[] {7, 90, 22, 1, 23, 45};
+		Integer[] arr =  {7, 90, 22, 1, 23, 45};
 		
 		Arrays.sort(arr);
 
@@ -31,9 +31,12 @@ public class TestJavaArrays {
 		System.out.println(Arrays.toString(sArray));
 		
 		
-		Arrays.sort(sArray, Collections.reverseOrder());
+		Arrays.sort(arr, Collections.reverseOrder());
+		System.out.println(Arrays.toString(arr));
 		
+		Arrays.sort(sArray, Collections.reverseOrder());
 		System.out.println(Arrays.toString(sArray));
+
 		
 		for(int i=0; i<sArray.length; i++) {
 			System.out.println(sArray[i]);

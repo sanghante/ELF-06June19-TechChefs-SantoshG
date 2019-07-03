@@ -7,8 +7,6 @@ public class EmployeeBean {
 	 * 
 	 */
 	public EmployeeBean() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 	/**
 	 * @param id
@@ -21,7 +19,6 @@ public class EmployeeBean {
 	 */
 	public EmployeeBean(int id, String name, String department, double salary, int age, String gender,
 			Date dateOfJoining) {
-		super();
 		this.id = id;
 		this.name = name;
 		this.department = department;
@@ -40,6 +37,7 @@ public class EmployeeBean {
 	private int age;
 	private String gender;
 	private Date dateOfJoining;
+	
 	public int getId() {
 		return id;
 	}

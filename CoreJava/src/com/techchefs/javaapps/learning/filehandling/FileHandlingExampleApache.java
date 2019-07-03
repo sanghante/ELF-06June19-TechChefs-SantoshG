@@ -15,7 +15,7 @@ public class FileHandlingExampleApache {
 			
 			System.out.println("File created");
 			
-			System.out.println(FileUtils.readFileToString(new File("jun18.txt"), Charset.defaultCharset()));
+			System.out.println(FileUtils.readFileToString(new File("jun18_1.txt"), Charset.defaultCharset()));
 			
 		} catch (IOException e) {
 			e.printStackTrace();
