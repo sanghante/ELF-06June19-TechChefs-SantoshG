@@ -1,4 +1,4 @@
-package com.techchefs.javaapps.learning.properties;
+package com.techchefs.javaapps.assignment.assessment.moduleone;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -10,7 +10,7 @@ public class ReadPropertiesFile {
 
 	public static void main(String[] args) {
 
-		try (FileInputStream fin = new FileInputStream("demo.properties")) {
+		try (FileInputStream fin = new FileInputStream("personal.properties")) {
 
 			Properties p = new Properties();
 			p.load(fin);
@@ -23,8 +23,10 @@ public class ReadPropertiesFile {
 			}
 			
 		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

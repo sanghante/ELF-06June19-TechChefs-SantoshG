@@ -1,5 +1,7 @@
 package com.techchefs.javaapps.learning.methodreference;
 
+import java.util.function.Function;
+
 public class TestNonStaticMethodReference {
 
 	public static void main(String[] args) {
@@ -11,6 +13,12 @@ public class TestNonStaticMethodReference {
 		
 		
 		myFactorial f = myStudent :: factorial;
+		
+		Function<Integer, Integer> func = myStudent :: factorial;
+		
+		System.out.println(func.apply(6));
+		
+		
 		int res = f.fact(5);
 		System.out.println(res);
 		

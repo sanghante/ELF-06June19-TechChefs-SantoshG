@@ -10,7 +10,7 @@ public class TestConsumer {
 		
 		getAvg(puttGowri);
 		
-		Consumer<Student> consumer = (s) ->  System.out.println( (s.physics + s.chemistry + s.maths)/ 3.0 );
+		Consumer<Student> consumer = s ->  System.out.println( (s.physics + s.chemistry + s.maths)/ 3.0 );
 		
 		consumer.accept(puttGowri);
 	}

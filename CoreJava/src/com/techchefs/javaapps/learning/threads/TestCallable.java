@@ -9,7 +9,7 @@ public class TestCallable {
 		
 		Pencil p1 = new Pencil();
 		
-		FutureTask<Integer> ft = new FutureTask(p1);
+		FutureTask<Integer> ft = new FutureTask<Integer>(p1);
 		
 		Thread t1 = new Thread(ft);
 		t1.start();
