@@ -11,7 +11,7 @@ public class EmployeeDAOFactory {
 		if (dbInteractionType.equals("jdbc")) {
 			dao = new EmployeeDAOJDBCImpl();
 		} else if (dbInteractionType.equals("hibernate")) {
-			dao = new EmployeeDAOHibernateImpl();
+			dao = new EmployeeDAOHibernateImpl2();
 		}
 		return dao;
 	}// End of getInstance()

@@ -110,4 +110,34 @@ public class EmployeeDAOJDBCImpl implements EmployeeDAO {
 		} // end of try-catch
 	}// end of main
 
+	@Override
+	public boolean createEmployeeInfo(EmployeeInfoBean bean) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public EmployeeInfoBean readmployeeInfo(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean updateEmployeeInfo(EmployeeInfoBean bean) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean deleteEmployeeInfo(String id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean deleteEmployeeInfo(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }// End of class

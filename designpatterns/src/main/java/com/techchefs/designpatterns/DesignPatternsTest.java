@@ -2,6 +2,10 @@ package com.techchefs.designpatterns;
 
 
 import com.techchefs.designpatterns.dto.EmployeeInfoBean;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
 import com.techchefs.designpatterns.dao.EmployeeDAO;
 import com.techchefs.designpatterns.dao.EmployeeDAOFactory;
 
@@ -21,7 +25,43 @@ public class DesignPatternsTest {
 		/*
 		 * ArrayList<EmployeeInfoBean> beans = dao.getAllEmployeeInfo();
 		 * beans.parallelStream().forEach(DesignPatternsTest::printEmployeeInfo);
-		 */		
+		 */	
+		
+		//create EmployeeInfoBean and save
+		EmployeeInfoBean bean = createEmployee();
+		dao.createEmployeeInfo(bean);
+		
+		dao.updateEmployeeInfo(bean);
+		
+		dao.deleteEmployeeInfo(32);
+		
+	}
+	
+	private static EmployeeInfoBean createEmployee() {
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+
+		EmployeeInfoBean employeeInfoBean = new EmployeeInfoBean();
+
+		employeeInfoBean.setId(32);
+		employeeInfoBean.setDepartmentId(20);
+		employeeInfoBean.setManagerId(3);
+		employeeInfoBean.setAccountNumber(1012458765);
+		employeeInfoBean.setDesignation("Director");
+		employeeInfoBean.setEmail("debug.test@gmail.com");
+		employeeInfoBean.setGender("M");			
+		try {
+			employeeInfoBean.setDob(formatter.parse("1970-01-21"));
+			employeeInfoBean.setJoiningDate(formatter.parse("2018-02-06"));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		employeeInfoBean.setName("Rajesh Goyal");
+		employeeInfoBean.setPhoneNumber("9876543211");
+		employeeInfoBean.setSalary(2400000);		
+		employeeInfoBean.setAge(49);
+		
+		return employeeInfoBean;
+
 	}
 	
 	private static void printEmployeeInfo(EmployeeInfoBean bean) {

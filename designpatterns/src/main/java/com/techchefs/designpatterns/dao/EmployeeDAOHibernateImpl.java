@@ -4,8 +4,12 @@
 package com.techchefs.designpatterns.dao;
 
 import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.ArrayList;
 
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -38,9 +42,7 @@ public class EmployeeDAOHibernateImpl implements EmployeeDAO {
 		
 		//step 1.
 		Configuration cfg = new Configuration();
-		//cfg.configure("MyHibernate.cfg.xml");
-		//cfg.configure();
-		cfg.configure( new File("D:\\MyHibernate.cfg.xml"));
+		cfg.configure();
 		cfg.addAnnotatedClass(EmployeeInfoBean.class);
 		//step 2. 
 		SessionFactory factory = cfg.buildSessionFactory();
@@ -58,6 +60,36 @@ public class EmployeeDAOHibernateImpl implements EmployeeDAO {
 	@Override
 	public ArrayList<EmployeeInfoBean> getAllEmployeeInfo() {
 		return null;
+	}
+
+	@Override
+	public boolean createEmployeeInfo(EmployeeInfoBean bean) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public EmployeeInfoBean readmployeeInfo(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean updateEmployeeInfo(EmployeeInfoBean bean) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean deleteEmployeeInfo(String id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean deleteEmployeeInfo(int id) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }
