@@ -3,7 +3,8 @@ package com.techchefs.hibernateapp.util;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public final class HibernateUtil2 {
+//problem here is that class can be extended and getSessionFactory() can be modified in extended class.
+public class HibernateUtil2 {
 
 	private static SessionFactory sessionFactory = null;
 	private static SessionFactory buildSessionFactory() {

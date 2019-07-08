@@ -4,9 +4,11 @@
 package com.techchefs.designpatterns.dao;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import com.techchefs.designpatterns.dto.EmployeeInfoBean;
 import com.techchefs.designpatterns.util.HibernateUtil;
@@ -49,7 +51,15 @@ public class EmployeeDAOHibernateImpl2 implements EmployeeDAO {
 
 	@Override
 	public ArrayList<EmployeeInfoBean> getAllEmployeeInfo() {
-		return null;
+		Session session = HibernateUtil.getSession();
+		
+		Query<EmployeeInfoBean> query = session.createQuery(" from EmployeeInfoBean");
+		ArrayList<EmployeeInfoBean> list = (ArrayList<EmployeeInfoBean>) query.getResultList();
+		
+		session.close();
+		return list;
+
+		
 	}
 
 	private boolean saveOrUpdate(EmployeeInfoBean bean) {

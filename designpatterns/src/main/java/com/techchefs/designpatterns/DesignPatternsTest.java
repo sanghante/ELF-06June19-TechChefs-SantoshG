@@ -1,13 +1,13 @@
 package com.techchefs.designpatterns;
 
 
-import com.techchefs.designpatterns.dto.EmployeeInfoBean;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 
 import com.techchefs.designpatterns.dao.EmployeeDAO;
 import com.techchefs.designpatterns.dao.EmployeeDAOFactory;
+import com.techchefs.designpatterns.dto.EmployeeInfoBean;
 
 import lombok.extern.java.Log;
 
@@ -22,10 +22,10 @@ public class DesignPatternsTest {
 		EmployeeDAO dao = EmployeeDAOFactory.getInstance();
 		printEmployeeInfo(dao.getEmployeeInfo(1));
 		printEmployeeInfo(dao.getEmployeeInfo("2"));
-		/*
-		 * ArrayList<EmployeeInfoBean> beans = dao.getAllEmployeeInfo();
-		 * beans.parallelStream().forEach(DesignPatternsTest::printEmployeeInfo);
-		 */	
+		
+		
+		ArrayList<EmployeeInfoBean> beans = dao.getAllEmployeeInfo();
+		beans.parallelStream().forEach(DesignPatternsTest::printEmployeeInfo);
 		
 		//create EmployeeInfoBean and save
 		EmployeeInfoBean bean = createEmployee();

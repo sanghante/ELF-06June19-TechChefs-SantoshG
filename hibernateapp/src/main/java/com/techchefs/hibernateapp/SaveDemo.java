@@ -32,7 +32,7 @@ public class SaveDemo {
 			EmployeeInfoBean employeeInfoBean = new EmployeeInfoBean();
 
 			employeeInfoBean.setId(22);
-			employeeInfoBean.setDeptId(20);
+			employeeInfoBean.setDepartmentId(20);
 			employeeInfoBean.setManagerId(3);
 			employeeInfoBean.setAccountNumber(1012458765);
 			employeeInfoBean.setDesignation("Director");

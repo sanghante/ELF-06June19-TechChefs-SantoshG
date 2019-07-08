@@ -1,4 +1,4 @@
-package com.techchefs.hibernateapp.dto;
+package com.techchefs.hibernateapp.cache;
 
 import java.io.Serializable;
 
@@ -23,15 +23,21 @@ DOB				(DATE)
 
 import java.util.Date;
 
+import javax.persistence.Cacheable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
 //import lombok.Data;
 @Entity
 @Table(name="employee_info")
-public class EmployeeInfoBean implements Serializable {
+@Cacheable
+@Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
+public class NewEmployeeInfoBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	

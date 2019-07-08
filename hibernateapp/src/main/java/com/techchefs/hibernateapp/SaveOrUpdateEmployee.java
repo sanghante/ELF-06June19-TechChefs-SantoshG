@@ -23,8 +23,8 @@ public class SaveOrUpdateEmployee {
 			SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 			EmployeeInfoBean employeeInfoBean = new EmployeeInfoBean();
 
-			employeeInfoBean.setId(24);
-			employeeInfoBean.setDeptId(20);
+			employeeInfoBean.setId(30);
+			employeeInfoBean.setDepartmentId(20);
 			employeeInfoBean.setManagerId(3);
 			employeeInfoBean.setAccountNumber(1012458765);
 			employeeInfoBean.setDesignation("Senior Software Developer");
@@ -38,7 +38,9 @@ public class SaveOrUpdateEmployee {
 			employeeInfoBean.setAge(31);
 			
 			Transaction transaction = session.beginTransaction();
-			session.save(employeeInfoBean);
+			session.saveOrUpdate(employeeInfoBean);
+			employeeInfoBean.setSalary(3000000);
+			session.saveOrUpdate(employeeInfoBean);
 			transaction.commit();
 			session.close();
 			
