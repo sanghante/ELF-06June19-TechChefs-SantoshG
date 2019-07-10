@@ -8,8 +8,19 @@
   	<servlet-name>myFirstServlet</servlet-name>
   	<servlet-class>com.techchefs.mywebapp.servlets.MyFirstServlet</servlet-class>  
   </servlet>
+  <servlet>
+  	<servlet-name>myEmployeeSearchServlet</servlet-name>
+  	<servlet-class>com.techchefs.mywebapp.servlets.EmployeeSearchServlet</servlet-class>  
+  </servlet>
   <servlet-mapping>
+  	<servlet-name>myEmployeeSearchServlet</servlet-name>
+  	<url-pattern>/empsearch</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
   	<servlet-name>myFirstServlet</servlet-name>
   	<url-pattern>/currentDateTime</url-pattern>
   </servlet-mapping>
+  <welcome-file-list>
+  <welcome-file>/mywebapp/index.html</welcome-file>
+  </welcome-file-list>
 </web-app>

@@ -19,27 +19,37 @@ public class MyFirstServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
 		String currentDateTime = new Date().toString();
+		
+		//Get Query String information 
+		String fnameValue = req.getParameter("fname");
+		String lnameValue = req.getParameter("lname");
 		
 		String htmlResponse = 
 				"<!DOCTYPE html>"+
 						"<html>"+
 						"<head>"+
 						"<meta charset=\"ISO-8859-1\">"+
-						"<title>Insert title here</title>"+
+						"<title>My Servlet Response</title>"+
 						"</head>"+
 						"<body>"+
 						"	<h1>"+
-						"		Current time is : <br>"+
-						"		<span style=\"color:blue\">"+currentDateTime+"</span>"+
+						"		Current Date and Time is : <br>"+
+						"		<span style=\"color:black\">"+currentDateTime+"</span>"+
+						"		<br><br>"+
+						" 		First Name : "+fnameValue+
+						"		<br>"+
+						" 		Last Name : "+lnameValue+
 						"	</h1>"+
 						"</body>"+
 						"</html>";
 		
 		//send resp to browser
 		resp.setContentType("text/html");
-		resp.setHeader("Refresh","1"); //Auto Refresh every second
+		//resp.setHeader("Refresh","1"); //Auto Refresh every second
 		PrintWriter out = resp.getWriter();
+		//System.out.println(htmlResponse);
 		out.print(htmlResponse);
 	}
 	
