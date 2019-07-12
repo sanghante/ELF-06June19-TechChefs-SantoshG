@@ -1,0 +1,170 @@
+Brandon Eich - developed Javascript in 10 days in 1995 for Netscape.
+First named as - Mocha
+Later as - LiveScript
+Finally as - Javascript
+
+Javascript is a scripting language used to make the webpage dynamic. Used for client side validation.
+
+ECMA - European Computer Manufacturers Associations.
+Write standard for technologies.
+
+Javascript guys approached ECMA to make it a standard. So ECMAScript was born. 
+For scripting language. ECMA 2.62 specification/
+
+Browser doesn't understand Javascript. It uses JS Engine to interpret (execute line by line) and uses JIT to compile Javascript to machine level code.
+Web browser vendors develop Javascript Engines.
+
+Chrome uses V8 Engine => compared to other engines, this are fastest and best performing engine.
+Firefox uses SpiderMonkey.
+IE - Chakra.
+Safari - Javascript Core.
+Opera - V8 Engine.
+
+Javascript datatypes -> boolean, String, Number, null, undefined are primitive datatypes.
+It can also have reference datatypes.
+
+String can be enclosed with " ", ' ', ` `.
+
+var a; -> a is undefined datatype.
+
+var a = null; -> null datatype.
+
+ES6 has added symbol and bigint.
+
+Reference datatypes
+-------------------
+Object
+Array
+Date
+Math
+Function -> is also an object in Javascript.
+
+Objects -> real world entity having state and behavior.
+
+object definition
+
+var person = 
+ {
+	Key1 : Value1,
+	Key2 : Value2,
+	Key3 : Value3
+
+	getKey1 : function() {
+		return this.Key1;
+	}
+ }
+ 
+ can create using new Object();
+
+person = new Object();
+
+person.Key1
+person.Key2
+person.getKey1()
+
+or
+
+person["Key1"];
+
+; is not mandatory, Engine will add ; by itself.
+
+
+ var fruits = ["banana", true, 1, null];
+ 
+ fruits[0];
+ 
+ can use new keyword
+ 
+ var array = new Array();
+ 
+Dates: 
+var date = new Date();
+
+Math:
+
+Math -> +, -. *, /, %
+
+Math.max(10,20,30,40);
+Math.min(10,20,30,40);
+
+Math.floor(4.7) -> 4;
+Math.ceil(4.3) -> 5;
+
+Math.randon() -> 0 to 1 (not inclusive)
+
+Math.PI -> property
+
+Math.log()
+
+Math.eu() ?? - something to do with Euler
+
+Function:
+keyword function.
+
+1). Named functions
+
+function getName() {
+
+}
+
+2). without name -> anonymous functions or function expression.
+
+var getAge = function() {
+
+}
+
+3). IIFE  -> Immediately invoked function expression , also called self invoked functions
+
+(function() {
+
+}());
+
+
+4) Fat arrow function (similar to Java Lambdas) : ES6 feature.
+
+() => { }
+
+() =>  ... ;
+
+name =>  .... ;
+
+
+remind to tell difference between primitive and reference.
+
+
+Primitive vs reference
+-----------------------
+
+primitive => immutable ??
+reference => mutable ??
+
+
+var number1=10;
+var number2=10;
+console.log(number1 == number2);
+var str = '10';
+console.log(number1 == str);
+console.log(number2===str);
+VM507:3 true
+VM507:5 true
+VM507:6 false
+
+------------------------------
+
+*** most functions in javascript will take call back function
+
+
+let, const => ES6 new feature.
+
+------------------
+var a = 10;
+var a = 20;
+ a = 30;
+ 
+ global scope;
+ 
+-------------------
+
+ 
+
+
