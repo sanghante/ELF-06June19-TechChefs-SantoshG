@@ -1,5 +1,7 @@
 package com.techchefs.myspringapp.springcore.beans;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 
 public class MessageBean {
 	
@@ -11,6 +13,17 @@ public class MessageBean {
 	
 	public void setMessage(String str) {
 		this.message = str;
+	}
+	
+	@PostConstruct
+	public void init() {
+		System.out.println("Init");
+	}
+	
+	@PreDestroy
+	public boolean destroy() {
+		System.out.println("Destroy");
+		return false;
 	}
 
 }
