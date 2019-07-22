@@ -20,7 +20,7 @@ public class HP implements Laptop {
 	private String os;
 	
 	@Autowired
-	@Qualifier(value = "pendrive")
+	@Qualifier("pendrive")
 	private StorageDevice storageDevice;
 
 	public void display() {
