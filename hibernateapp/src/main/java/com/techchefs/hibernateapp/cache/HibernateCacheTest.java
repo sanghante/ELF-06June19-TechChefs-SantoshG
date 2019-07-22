@@ -1,8 +1,8 @@
 package com.techchefs.hibernateapp.cache;
 
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
+
+import com.techchefs.hibernateapp.util.HibernateCacheUtil;
 
 import lombok.extern.java.Log;
 
@@ -13,26 +13,20 @@ public class HibernateCacheTest {
 		
 		log.info("1st call : " +getEmployeeData(30).toString());
 		log.info("2nd call : " +getEmployeeData(30).toString());
-		log.info("3rd call : " +getEmployeeData(30).toString());
+		log.info("3rd call : " +getEmployeeData(20).toString());
+		
 		
 	}
 
 	
-	private static NewEmployeeInfoBean getEmployeeData(int Id) {
-		//1. Load the config file
-		Configuration config = new Configuration();
-		config.configure("com/techchefs/hibernateapp/cache/hibernate.cache.cfg.xml");
-		config.addAnnotatedClass(NewEmployeeInfoBean.class);
-		//2. Build session factory
-		SessionFactory factory = config.buildSessionFactory();
+	private static NewEmployeeInfoBean getEmployeeData(int id) {
+
+		NewEmployeeInfoBean emp;
+		try (Session session = HibernateCacheUtil.getSessionFactory().openSession();) {
 		
-		//3. Open session
-		Session session = factory.openSession();
-		
-		//4. Interact with DB
-		NewEmployeeInfoBean emp = session.get(NewEmployeeInfoBean.class, 20);
-		log.info(" 1st time : " + emp.toString());
-		session.close();
+			emp = session.get(NewEmployeeInfoBean.class, id);
+			log.info(" 1st time : " + emp.toString());
+		}
 		
 		return emp;
 		

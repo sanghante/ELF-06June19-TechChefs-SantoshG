@@ -4,4 +4,10 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  
+  <session-config>
+  	<!-- Timeout in Min -->
+  	<session-timeout>604800</session-timeout>
+  </session-config>
+  
 </web-app>

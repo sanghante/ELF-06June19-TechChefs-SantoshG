@@ -1,4 +1,4 @@
-package com.techchefs.hibernateapp.dto;
+package com.techchefs.hibernateapp.onetoone;
 
 import java.io.Serializable;
 
@@ -40,6 +40,7 @@ import lombok.Data;
 @Table(name="employee_info")
 public class EmployeeInfoBean implements Serializable {
 
+	private static final long serialVersionUID = 1L;
 	@OneToOne(cascade = CascadeType.ALL)
 	@PrimaryKeyJoinColumn
 	private EmployeeOtherInfoBean otherInfo;

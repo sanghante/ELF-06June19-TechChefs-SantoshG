@@ -1,4 +1,4 @@
-package com.techchefs.hibernateapp.dto;
+package com.techchefs.emp.dto;
 
 import java.io.Serializable;
 
@@ -23,26 +23,19 @@ DOB				(DATE)
 
 import java.util.Date;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
-
-import com.techchefs.hibernateapp.onetoone.EmployeeOtherInfoBean;
 
 import lombok.Data;
 
-@Data
 @Entity
 @Table(name="employee_info")
+@Data
 public class EmployeeInfoBean implements Serializable {
 
-	@OneToOne(cascade = CascadeType.ALL)
-	@PrimaryKeyJoinColumn
-	private EmployeeOtherInfoBean otherInfo;
+	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@Column(name="id")
@@ -83,5 +76,18 @@ public class EmployeeInfoBean implements Serializable {
 	
 	@Column(name="age")
 	private int age;
+	
+	@Column(name="password")
+	private String password;
+	
+	
+	@Override
+	public String toString() {
+		return "EmployeeInfoBean [id=" + id + ", name=" + name + ", gender=" + gender + ", salary=" + salary
+				+ ", phoneNumber=" + phoneNumber + ", email=" + email + ", designation=" + designation + ", dob=" + dob
+				+ ", accountNumber=" + accountNumber + ", joiningDate=" + joiningDate + ", deptId=" + departmentId
+				+ ", managerId=" + managerId + ", age=" + age + "]";
+	}
+	
 
 }//end of class

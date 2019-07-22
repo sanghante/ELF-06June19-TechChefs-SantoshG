@@ -14,8 +14,9 @@
         <property name="hibernate.format_sql">true</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>        
         <property name="hibernate.cache.use_second_level_cache">true</property>
-        <!-- <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.internal.EhcacheRegionFactory</property> -->
-        <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+        <!-- both below properties work -->
+        <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.internal.EhcacheRegionFactory</property>
+        <!-- <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property> -->
         <property name = "hibernate.cache.provider_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
 
         <!-- <mapping resource="book.hbm.xml" /> -->
@@ -23,5 +24,6 @@
         <mapping class="com.techchefs.hibernateapp.dto.EmployeeAddressInfoBean"/>
         <mapping class="com.techchefs.hibernateapp.dto.EmployeeOtherInfoBean"/>
         <mapping class="com.techchefs.hibernateapp.dto.EmployeeNewInfo"/>
+        <mapping class="com.techchefs.hibernateapp.cache.NewEmployeeInfoBean"/>
     </session-factory>
 </hibernate-configuration>
