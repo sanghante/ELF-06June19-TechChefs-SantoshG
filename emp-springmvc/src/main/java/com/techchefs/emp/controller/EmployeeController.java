@@ -1,8 +1,16 @@
 package com.techchefs.emp.controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,6 +26,12 @@ import lombok.extern.java.Log;
 @Controller
 @RequestMapping("/employee")
 public class EmployeeController {
+	
+	@InitBinder
+	public void customBinder(WebDataBinder binder) {
+		CustomDateEditor customDateEditor = new CustomDateEditor(new SimpleDateFormat("yyyy-MM-dd"), true);
+		binder.registerCustomEditor(Date.class, customDateEditor);
+	}
 	
 	@RequestMapping(path="/getMessage", method = RequestMethod.GET)
 	public ModelAndView getMessage() {
@@ -49,6 +63,26 @@ public class EmployeeController {
 		}
 	}
 	
+	@PostMapping("/saveEmployee")
+	public String saveEmployee(ModelMap modelMap, EmployeeInfoBean empBean) {
+		EmployeeDAO dao = EmployeeDAOFactory.getInstance();
+		if (dao.createEmployeeInfo(empBean)) {
+			modelMap.addAttribute("empBean", empBean);
+			return "displaypage";
+
+		} else {
+			modelMap.addAttribute("msg", "Incorrect Credentials");
+			return "login";
+		}
+		
+	}
+	
+	@GetMapping("/createEmployee")
+	public String createEmployee() {
+		return "createEmployee";
+	}
+	
+	
 	@GetMapping("/login")
 	public String showLoginForm() {
 		return "login";
@@ -66,6 +100,6 @@ public class EmployeeController {
 			return null;
 		}
 	}
-
+	
 	
 }

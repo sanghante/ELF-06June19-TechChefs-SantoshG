@@ -4,6 +4,7 @@
     pageEncoding="ISO-8859-1"%>
 <html>
 <head>
+<title>Home Page</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <script
@@ -26,20 +27,21 @@ img {
 </div>
 
 	<div class="container emp-profile">
-		<form method="post">
+		<!-- <form method="get"> -->
+		<h6>{msg}</h6>
 			<div class="row">
 				<div class="col-md-4"></div>
 				<div class="col-md-7">
 					<div class="wrap"></div>
 				</div>
 				<div class="col-md-1">
-					<a href="./login.html">Logout</a>
+					<a href="./logout">Logout</a>
 				</div>
 				<br />
 				<br />
 				<div class="col-md-4">
 					<!-- <a href='./display'> -->
-					<img src="../image_avatar.png" alt="Avatar" style="width: 100px;">
+					<img src="/resources/image_avatar.png" alt="Avatar" style="width: 100px;">
 					<!-- </a> --> 
 				</div>
 				<div class="col-md-6">
@@ -54,8 +56,8 @@ img {
 					</div>
 				</div>
 				<div class="col-md-2">
-					<input type="submit" class="profile-edit-btn" name="btnAddMore"
-						value="Edit" />&nbsp;&nbsp;
+					<button type="submit" class="profile-edit-btn" name="btnAddMore"
+						value="Add Employee" onclick="location.href='./createEmployee'" >Create Account</button>
 				</div>
 			</div>
 			<div class="row">
@@ -174,11 +176,112 @@ img {
 									<p>${empBean.managerId}</p>
 								</div>
 							</div>
+							
+														
+							<!-- Other Info -->
+							<div class="row">
+								<div class="col-md-6">
+									<label>Father Name</label>
+								</div>
+								<div class="col-md-6">
+									<p>${empBean.otherInfo.fatherName}</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<label>Mother Name</label>
+								</div>
+								<div class="col-md-6">
+									<p>${empBean.otherInfo.motherName}</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<label>Emergency Contact Name</label>
+								</div>
+								<div class="col-md-6">
+									<p>${empBean.otherInfo.emergencyContactName}</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<label>Emergency Contact Number</label>
+								</div>
+								<div class="col-md-6">
+									<p>${empBean.otherInfo.emergencyContactNumber}</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<label>Aadhar Number</label>
+								</div>
+								<div class="col-md-6">
+									<p>${empBean.otherInfo.aadhar}</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<label>Passport Number</label>
+								</div>
+								<div class="col-md-6">
+									<p>${empBean.otherInfo.passport}</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<label>PAN Number</label>
+								</div>
+								<div class="col-md-6">
+									<p>${empBean.otherInfo.pan}</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<label>Marital Status</label>
+								</div>
+								<div class="col-md-6">
+									<p>${empBean.otherInfo.ismarried}
+									</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<label>Blood Group</label>
+								</div>
+								<div class="col-md-6">
+									<p>${empBean.otherInfo.bloodGrp}</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<label>Religion</label>
+								</div>
+								<div class="col-md-6">
+									<p>${empBean.otherInfo.religion}</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<label>Nationality</label>
+								</div>
+								<div class="col-md-6">
+									<p>${empBean.otherInfo.nationality}</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<label>Spouse Name</label>
+								</div>
+								<div class="col-md-6">
+									<p>${empBean.otherInfo.spouseName}</p>
+								</div>
+							</div>
+							
 
 					</div>
 				</div>
 			</div>
-		</form>
+		<!-- </form> -->
 	</div>
 </body>
 </html>

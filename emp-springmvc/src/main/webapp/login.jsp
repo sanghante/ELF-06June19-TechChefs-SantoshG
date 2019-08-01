@@ -1,3 +1,4 @@
+<%@page session="false" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +22,7 @@
         <div class="col-md-4 offset-2 text-black"  style="background:lightblue">        
             <div class="card-body">
                 <h4 class="text-center">Welcome to EMP</h4>
-                <form action="./doAuth" method="POST">
+                <form action="./login" method="POST">
                     <div class="form-group">
                         <label for="name">Emp Id</label>
                         <input type="text" id="empid" name="userId" placeholder="Enter Employee Id" class="form-control">
@@ -44,11 +45,11 @@
                           </div> 
                          
                          <div class="row">
-                            <div class="col">
+<!--                             <div class="col">
                               <br>
-                                <button type="button" class="form-control btn btn-outline-success" onclick="location.href='./createEmployee.html'" >Create Account</button>
+                                <button type="button" class="form-control btn btn-outline-success" onclick="location.href='./createEmployee'" >Create Account</button>
                             </div>
-        
+ -->        
                             <div class="col">
                               <br>
                                 <button type="submit" class="form-control btn btn-outline-success">Forgot Password</button>
