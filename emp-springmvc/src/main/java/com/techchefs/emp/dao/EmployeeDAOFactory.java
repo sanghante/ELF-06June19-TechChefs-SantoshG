@@ -1,19 +1,19 @@
 package com.techchefs.emp.dao;
 
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
+
+@Component
 public class EmployeeDAOFactory {
-
-	private static String dbInteractionType = "hibernate";
 	
-	private EmployeeDAOFactory() {}
+	@Bean("jdbc")
+	public EmployeeDAO getJDBCInstance() {
+		return new EmployeeDAOHibernateImpl();
+	}
+	
+	@Bean("hibernate")
+	public EmployeeDAO getHibernateInstance() {
+		return new EmployeeDAOHibernateImpl();
+	}
 
-	public static EmployeeDAO getInstance() {
-		EmployeeDAO dao = null;
-		if (dbInteractionType.equals("jdbc")) {
-			//dao = new EmployeeDAOJDBCImpl();
-		} else if (dbInteractionType.equals("hibernate")) {
-			dao = new EmployeeDAOHibernateImpl();
-		}
-		return dao;
-	}// End of getInstance()
-
-}// End of Class
+}

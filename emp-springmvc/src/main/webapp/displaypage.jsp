@@ -21,8 +21,8 @@ img {
 <body>
 
 <div class='container emp-profile'>
-<form action="./empSearch" method="get">
-<span style="color:blue">Search Employee Id : </span><input type="text" name="eid"/>
+<form action="./validate/empSearch" method="get">
+<span style="color:blue">Search Employee Id : </span><input type="text" name="userId"/><!-- <input hidden type="text" name="url" value="search"/> -->
 <input type="submit" value="Search"/></form>
 </div>
 
@@ -56,9 +56,9 @@ img {
 					</div>
 				</div>
 				<div class="col-md-2">
-					<button type="submit" class="profile-edit-btn" name="btnAddMore"
+<!-- 					<button type="submit" class="profile-edit-btn" name="btnAddMore"
 						value="Add Employee" onclick="location.href='./createEmployee'" >Create Account</button>
-				</div>
+ -->				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-4">

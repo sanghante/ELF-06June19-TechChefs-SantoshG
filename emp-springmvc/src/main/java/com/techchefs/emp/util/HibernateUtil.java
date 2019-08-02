@@ -2,37 +2,20 @@ package com.techchefs.emp.util;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-import com.techchefs.emp.dto.EmployeeInfoBean;
-import com.techchefs.emp.dto.EmployeeOtherInfoBean;
+import lombok.Data;
 
-public final class HibernateUtil {
-
-	private static SessionFactory sessionFactory = null;
+@Data
+@Component
+public class HibernateUtil {
 	
-	int[] a = new int[]{2,4};
-	int[] b = {2,4};
+	@Autowired
+	private SessionFactory sessionFactory;
 	
-	private HibernateUtil() {}
-
-	private static SessionFactory buildSessionFactory() {
-		return new Configuration()
-				.configure()
-				.addAnnotatedClass(EmployeeInfoBean.class)
-				.addAnnotatedClass(EmployeeOtherInfoBean.class)
-				.buildSessionFactory();		
-	}
-	
-	private static SessionFactory getSessionFactory() {
-		if (sessionFactory == null) {
-			sessionFactory = buildSessionFactory();
-		}
-		return sessionFactory;
-	}
-	
-	public static Session getSession() {
-		return getSessionFactory().openSession();
+	public Session openSession() {
+		return sessionFactory.openSession();
 	}
 
 }
