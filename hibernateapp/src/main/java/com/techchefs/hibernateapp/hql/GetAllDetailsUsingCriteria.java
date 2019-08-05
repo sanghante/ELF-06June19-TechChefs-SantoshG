@@ -1,6 +1,11 @@
 package com.techchefs.hibernateapp.hql;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
@@ -17,8 +22,12 @@ public class GetAllDetailsUsingCriteria {
 	public static void main(String[] args) {
 		
 		Session session = HibernateUtil2.getSessionFactory().openSession();
-		Criteria criteria = session.createCriteria(EmployeeInfoBean.class);
-		List<EmployeeInfoBean> list = criteria.list();
+		//Criteria criteria = session.createCriteria(EmployeeInfoBean.class);
+		CriteriaBuilder cb = session.getCriteriaBuilder();
+		CriteriaQuery<EmployeeInfoBean> cq = cb.createQuery(EmployeeInfoBean.class);
+		Root<EmployeeInfoBean> emp = cq.from(EmployeeInfoBean.class);
+		cq.select(emp);
+		List<EmployeeInfoBean> list = new ArrayList<EmployeeInfoBean>();
 		
 		for (EmployeeInfoBean bean : list) {
 			log.info("Retrieved Employee Info from DAO");

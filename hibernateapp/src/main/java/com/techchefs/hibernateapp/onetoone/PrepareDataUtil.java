@@ -40,23 +40,24 @@ public class PrepareDataUtil {
 		empinfo.setAccountNumber(98798089);
 		empinfo.setJoiningDate(dateJoin); 
 		empinfo.setDepartmentId(30);
-		empinfo.setManagerId(3);
+		//empinfo.setManagerId(3);
 		
 		EmployeeOtherInfoBean otherInfo = new EmployeeOtherInfoBean();
-		otherInfo.setId(1);
+		//otherInfo.setId(1);
+		otherInfo.setEmployeeInfoBean(empinfo);
 		otherInfo.setIsmarried(false);
 		otherInfo.setPan("CMFDG2341k");
 		otherInfo.setBloodGrp("A+");
-		otherInfo.setEmergencyContactName("Niharika");
+		otherInfo.setEmergencyContactName("Rajesh");
 		otherInfo.setEmergencyContactNumber(678687980);
 		otherInfo.setNationality("Indian");
 		otherInfo.setReligion("Hindu");
-		otherInfo.setFatherName("Sushil");
-		otherInfo.setMotherName("abha");
+		otherInfo.setFatherName("Mahadev");
+		otherInfo.setMotherName("Mahamata");
 		otherInfo.setPassport("M89778");
 		otherInfo.setAadhar(787889L);
 		
-		empinfo.setOtherInfo(otherInfo);
+		//empinfo.setOtherInfo(otherInfo);
 		return empinfo;
 		
 	}

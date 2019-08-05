@@ -23,15 +23,12 @@ DOB				(DATE)
 
 import java.util.Date;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
-import com.techchefs.hibernateapp.onetoone.EmployeeOtherInfoBean;
 
 import lombok.Data;
 
@@ -41,9 +38,6 @@ import lombok.Data;
 public class EmployeeInfoBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	@OneToOne(cascade = CascadeType.ALL)
-	@PrimaryKeyJoinColumn
-	private EmployeeOtherInfoBean otherInfo;
 	
 	@Id
 	@Column(name="id")
@@ -79,10 +73,14 @@ public class EmployeeInfoBean implements Serializable {
 	@Column(name="dept_id")
 	private int departmentId;
 	
-	@Column(name="mngr_id")
-	private int managerId;
-	
 	@Column(name="age")
 	private int age;
+	
+//	@Column(name="mngr_id")
+//	private int managerId;
+	
+	@ManyToOne
+	@JoinColumn( name="Mngr_id", referencedColumnName = "id")
+	private EmployeeInfoBean managerId;
 
 }//end of class
