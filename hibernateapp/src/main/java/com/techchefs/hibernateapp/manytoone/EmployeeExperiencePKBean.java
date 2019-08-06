@@ -18,7 +18,7 @@ public class EmployeeExperiencePKBean implements Serializable{
 
 	@ManyToOne
 	@JoinColumn (name = "id")
-	private EmployeeInfoBean employeeInfoBean;
+	private EmployeeInfoBean infoBean;
 	@Column(name = "exp_id")
 	private int expId;
 }

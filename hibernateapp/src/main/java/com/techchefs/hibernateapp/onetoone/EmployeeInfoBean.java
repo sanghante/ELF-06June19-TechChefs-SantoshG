@@ -22,22 +22,47 @@ DOB				(DATE)
 */
 
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import com.techchefs.hibernateapp.manytomany.TrainingInfoBean;
+import com.techchefs.hibernateapp.manytoone.DepartmentInfoBean;
+import com.techchefs.hibernateapp.manytoone.EmployeeAddressInfoBean;
+import com.techchefs.hibernateapp.manytoone.EmployeeEducationInfoBean;
+import com.techchefs.hibernateapp.manytoone.EmployeeExperienceInfoBean;
 
 import lombok.Data;
 
+@SuppressWarnings("serial")
 @Data
 @Entity
 @Table(name="employee_info")
 public class EmployeeInfoBean implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+	@OneToOne(cascade = CascadeType.ALL, mappedBy = "employeeInfoBean")
+	private EmployeeOtherInfoBean otherInfoBean;
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "addressPKBean.infoBean")
+	private List<EmployeeAddressInfoBean> addressInfoBean;
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "experiencePKBean.infoBean")
+	private List<EmployeeExperienceInfoBean> experienceInfoBeans;
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "educationPKBean.infoBean")
+	private List<EmployeeEducationInfoBean> educationInfoBeans;
+	
+	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "infoBeans")
+	private List<TrainingInfoBean> trainingInfoBeans;
 	
 	@Id
 	@Column(name="id")
@@ -70,8 +95,13 @@ public class EmployeeInfoBean implements Serializable {
 	@Column(name="joining_date")
 	private Date joiningDate;
 	
-	@Column(name="dept_id")
-	private int departmentId;
+//	@Column(name="dept_id")
+//	private int departmentId;
+	
+	
+	@ManyToOne (cascade = CascadeType.ALL)
+	@JoinColumn (name = "Dept_id")
+	private DepartmentInfoBean departmentBean;
 	
 	@Column(name="age")
 	private int age;

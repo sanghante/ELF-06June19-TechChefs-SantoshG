@@ -1,7 +1,6 @@
 package com.techchefs.hibernateapp.manytoone;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
@@ -17,7 +16,7 @@ import lombok.Data;
 public class EmployeeEducationInfoBean implements Serializable {
 	
 	@EmbeddedId
-	private EmployeeEducationPKBean employeeEducationPKBean; 
+	private EmployeeEducationPKBean educationPKBean; 
 	@Column( name = "degree_type")
 	private String degreeType;
 	@Column( name = "branch")

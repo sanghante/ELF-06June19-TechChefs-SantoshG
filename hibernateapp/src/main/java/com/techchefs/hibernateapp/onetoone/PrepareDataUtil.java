@@ -39,7 +39,7 @@ public class PrepareDataUtil {
 		empinfo.setDob(dateDOB);
 		empinfo.setAccountNumber(98798089);
 		empinfo.setJoiningDate(dateJoin); 
-		empinfo.setDepartmentId(30);
+		//empinfo.setDepartmentId(30);
 		//empinfo.setManagerId(3);
 		
 		EmployeeOtherInfoBean otherInfo = new EmployeeOtherInfoBean();

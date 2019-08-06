@@ -8,6 +8,7 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 import com.techchefs.hibernateapp.manytomany.TrainingInfoBean;
+import com.techchefs.hibernateapp.manytoone.DepartmentInfoBean;
 import com.techchefs.hibernateapp.manytoone.EmployeeAddressInfoBean;
 import com.techchefs.hibernateapp.manytoone.EmployeeEducationInfoBean;
 import com.techchefs.hibernateapp.manytoone.EmployeeExperienceInfoBean;
@@ -55,6 +56,30 @@ public class HibernateImpl {
 		txn.commit();
 		session.close();
 
+	}
+	
+	public void createEmployee(EmployeeInfoBean infoBean) {
+		Session session = factory.openSession();
+		Transaction txn = session.beginTransaction();		
+		session.saveOrUpdate(infoBean);		
+		txn.commit();
+		session.close();
+		
+	}
+	
+	public EmployeeInfoBean getEmployeeInfoBean(int id) {
+		Session session = factory.openSession();
+		EmployeeInfoBean bean = session.get(EmployeeInfoBean.class, id);		
+		session.close();
+		return bean;
+	}
+	
+	public void createDepartment(DepartmentInfoBean deptBean) {
+		Session session = factory.openSession();
+		Transaction txn = session.beginTransaction();		
+		session.save(deptBean);		
+		txn.commit();
+		session.close();
 	}
 	
 	

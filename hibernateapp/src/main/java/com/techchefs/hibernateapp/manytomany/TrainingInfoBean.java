@@ -1,5 +1,6 @@
 package com.techchefs.hibernateapp.manytomany;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -15,10 +16,11 @@ import com.techchefs.hibernateapp.onetoone.EmployeeInfoBean;
 
 import lombok.Data;
 
+@SuppressWarnings("serial")
 @Entity
 @Table( name = "Training_info")
 @Data
-public class TrainingInfoBean {
+public class TrainingInfoBean implements Serializable {
 	
 	@Id
 	@Column(name = "course_id")

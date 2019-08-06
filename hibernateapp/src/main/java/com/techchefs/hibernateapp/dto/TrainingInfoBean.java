@@ -1,5 +1,7 @@
 package com.techchefs.hibernateapp.dto;
 
+import java.io.Serializable;
+
 /*
  * 
  * TRAINING_TYPE
@@ -13,8 +15,9 @@ TYPE		(VARCHAR)
 
 import lombok.Data;
 
+@SuppressWarnings("serial")
 @Data
-public class TrainingInfoBean {
+public class TrainingInfoBean implements Serializable {
 	
 	private int courseId ; 
 	private String courseName;

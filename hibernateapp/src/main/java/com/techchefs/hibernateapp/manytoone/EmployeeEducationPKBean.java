@@ -7,6 +7,8 @@ import javax.persistence.Embeddable;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.techchefs.hibernateapp.onetoone.EmployeeInfoBean;
+
 import lombok.Data;
 
 @SuppressWarnings("serial")
@@ -16,7 +18,7 @@ public class EmployeeEducationPKBean implements Serializable {
 
 	@ManyToOne
 	@JoinColumn(name = "ID")	
-	private com.techchefs.hibernateapp.onetoone.EmployeeInfoBean infoBean;
+	private EmployeeInfoBean infoBean;
 	@Column( name = "education_type")
 	private String educationType;
 

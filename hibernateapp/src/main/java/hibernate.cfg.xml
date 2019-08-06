@@ -20,5 +20,6 @@
         <mapping class="com.techchefs.hibernateapp.manytoone.EmployeeEducationInfoBean"/>
         <mapping class="com.techchefs.hibernateapp.manytoone.EmployeeExperienceInfoBean"/>
         <mapping class="com.techchefs.hibernateapp.manytomany.TrainingInfoBean"/>
+        <mapping class="com.techchefs.hibernateapp.manytoone.DepartmentInfoBean"/>
     </session-factory>
 </hibernate-configuration>

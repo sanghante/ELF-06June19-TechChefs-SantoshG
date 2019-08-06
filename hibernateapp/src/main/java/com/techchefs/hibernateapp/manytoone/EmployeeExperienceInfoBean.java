@@ -1,5 +1,6 @@
 package com.techchefs.hibernateapp.manytoone;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -9,13 +10,14 @@ import javax.persistence.Table;
 
 import lombok.Data;
 
+@SuppressWarnings("serial")
 @Entity
 @Data
 @Table( name = "employee_experience_info")
-public class EmployeeExperienceInfoBean {
+public class EmployeeExperienceInfoBean implements Serializable{
 	
 	@EmbeddedId
-	private EmployeeExperiencePKBean employeeEduPKBean; 
+	private EmployeeExperiencePKBean experiencePKBean; 
 	@Column(name= "company_name")
 	private String companyName;
 	@Column(name= "designation")
