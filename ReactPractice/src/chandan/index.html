@@ -1,0 +1,51 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Pure React Sample</title>
+</head>
+
+<style>
+    .blue{
+        font-size: xx-large;
+        color: blue;
+    }
+
+    .green{
+        font-size: xx-large;
+        color: green;
+    }
+
+    .black{
+        font-size: xx-large;
+        color: black;
+    }
+</style>
+
+</html>
+<body>
+<!--Target container-->
+<div id="react-container"></div>
+<!--React library & ReactDOM-->
+<script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script>
+//Pure React and Javascript code
+const items = ['Pen', 'Bag', 'Pencil'];
+const item = React.createElement("h1", {className:'blue', item : items} , "Grilled Sandwich");
+const list = React.createElement("ul", null, React.createElement('li', null, 'bread'),
+                                    React.createElement('li', null, 'Cheese'),
+                                    React.createElement('li', null, "Basil")
+                                    );
+
+const  itemsArray = React.createElement("ul", null, 
+items.map(function(val, index) {
+    return React.createElement('li', {key: index}, val);
+})
+)
+//items.map((val,index) => React.createElement('li', {key: index}, val)))                                    
+
+console.log(item);                                    
+console.log(itemsArray);                                    
+ReactDOM.render(itemsArray, document.getElementById('react-container'));
+</script>
+</body>
