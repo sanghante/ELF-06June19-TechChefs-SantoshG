@@ -47,7 +47,7 @@
                          <div class="row">
                             <div class="col">
                               <br>
-                                <button type="button" class="form-control btn btn-outline-success" onclick="location.href='./createEmployee'" >Create Account</button>
+                                <button type="button" class="form-control btn btn-outline-success" onclick="location.href='../employee/createEmployee'" >Create Account</button>
                             </div>
         
                             <div class="col">
@@ -59,6 +59,7 @@
                           
                 </form>
             </div>
-        </div> 
+        </div>
+   
 </body>
 </html>

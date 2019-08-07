@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.techchefs.emp.dto.UserBean;
 
-@Controller
-@RequestMapping("/forms")
+//@Controller
+//@RequestMapping("/forms")
 public class FormController {
 	
 	@GetMapping("/getForm")

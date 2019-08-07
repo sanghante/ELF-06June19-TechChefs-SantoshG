@@ -18,7 +18,11 @@
 
 </head>
 <body style="background: lightblue">
+<br>
+<hr>
 	<p class="h3" style="margin-left: 20%">Employee Information</p>
+	
+	
 	<hr>
 	<form action="./saveEmployee" method="post">
 		<div class="row">
@@ -121,40 +125,40 @@
         <div class="col-1"></div>
           <div class="col-3">
                 <label for="exampleInputemergenum">Emergency Contact Number</label>
-            <input type="text" class="form-control" placeholder="Please Enter Emergency Contact Number" name="otherInfo.emergencyContactNumber">
+            <input type="text" class="form-control" placeholder="Emergency Contact Number" name="otherInfo.emergencyContactNumber">
           </div>
           <div class="col-3">
                 <label for="exampleInputemergeName">Emergency Contact Name</label>
-            <input type="text" class="form-control" placeholder="Please Enter Emergency Contact Name" name="otherInfo.emergencyContactName">
+            <input type="text" class="form-control" placeholder="Emergency Contact Name" name="otherInfo.emergencyContactName">
           </div>
           </div>
         <div class="row">
           <div class="col-1"></div>
           <div class="col-3">
                 <label for="exampleInputmotname">Father Name</label>
-            <input type="text" class="form-control" placeholder="Please Enter Father Name" name="otherInfo.fatherName">
+            <input type="text" class="form-control" placeholder="Father Name" name="otherInfo.fatherName">
           </div>
           <div class="col-3">
                 <label for="exampleInputmotname">Mother Name</label>
-            <input type="text" class="form-control" placeholder="Please Enter Mother Name" name="otherInfo.motherName">
+            <input type="text" class="form-control" placeholder="Mother Name" name="otherInfo.motherName">
           </div>          
         </div>
         <div class="row">
         <div class="col-1"></div>
           <div class="col-3">
                 <label for="exampleInputPan">Pan Number</label>
-            <input type="text" class="form-control" placeholder="Please Enter Pan Number" name="otherInfo.pan">
+            <input type="text" class="form-control" placeholder="Pan Number" name="otherInfo.pan">
           </div>
           <div class="col-3">
                    <label for="exampleInputpassport">Passport Number</label>
-               <input type="text" class="form-control" placeholder="Please Enter Passport Number" name="otherInfo.passport">
+               <input type="text" class="form-control" placeholder="Passport Number" name="otherInfo.passport">
           </div>
           </div>
-          <div class="row">
+          <!-- <div class="row">
           <div class="col-1"></div>
                 <div class="col-3">
                 </div>
-         <!--  <div class="col-1"></div>
+          <div class="col-1"></div>
                 <div class="col-3">
                         <label for="inputStatus">Marital Status</label>
                         <select id="inputStatus" class="form-control" name="otherInfo.ismarried">
@@ -163,14 +167,15 @@
                     <option value="false">false</option>
                     <option value="false">false</option>
                 </select>
-                </div> -->
+                </div>
 
           <div class="col-3">
                 <label for="exampleInputspouse">Spouse Name</label>
             <input type="text" class="form-control" placeholder="Please Enter Spouse Name" name="otherInfo.spouseName">
           </div>
-        </div>
-        <div class="row"><div class="col-1"></div>
+        </div>  -->
+        <div class="row">
+        <div class="col-1"></div>
         <div class="col-3">
                <label for="inputnationality">Nationality</label>
                  <select id="inputnationality" class="form-control" name="otherInfo.nationality">
@@ -203,11 +208,242 @@
         </select>
         </div>
         <div class="col-3">
-                <label for="exampleInputaadhar">Aadhar Number</label>
-            <input type="text" class="form-control" placeholder="Please Enter Aadhar Number" name="otherInfo.aadhar">
+                <label for="exampleInputaadhar">Aadhaar Number</label>
+            <input type="text" class="form-control" placeholder="Aadhaar" name="otherInfo.aadhar">
           </div>
         </div>
+
+
+        <hr>
+        <p class="h3" style="margin-left: 20%">Address 1</p>
+        <hr>
+
+        <div class="row">
+        <div class="col-1"></div>
+          <div class="col-3">
+                <label for="addtype">Address Type</label>
+            <input type="text" class="form-control" placeholder="type" name="otherInfo.emergencyContactNumber">
+          </div>
+          <div class="col-3">
+                <label for="addline1">Address Line 1</label>
+            <input type="text" class="form-control" placeholder="address line 1" name="otherInfo.emergencyContactName">
+          </div>
+          </div>
+        <div class="row">
+          <div class="col-1"></div>
+          <div class="col-3">
+                <label for="addcity">City</label>
+            <input type="text" class="form-control" placeholder="city" name="otherInfo.fatherName">
+          </div>
+          <div class="col-3">
+                <label for="addstate">State</label>
+            <input type="text" class="form-control" placeholder="state" name="otherInfo.motherName">
+          </div>          
+        </div>
+        <div class="row">
+        <div class="col-1"></div>
+          <div class="col-3">
+                <label for="addcountry">Country</label>
+            <input type="text" class="form-control" placeholder="country" name="otherInfo.pan">
+          </div>
+          <div class="col-3">
+                   <label for="addpin">Pincode</label>
+               <input type="text" class="form-control" placeholder="pincode" name="otherInfo.passport">
+          </div>
+          </div>
+
 		
+		<br><hr>
+		
+		        <hr>
+        <p class="h3" style="margin-left: 20%">Address 2</p>
+        <hr>
+
+        <div class="row">
+        <div class="col-1"></div>
+          <div class="col-3">
+                <label for="addtype">Address Type</label>
+            <input type="text" class="form-control" placeholder="type" name="otherInfo.emergencyContactNumber">
+          </div>
+          <div class="col-3">
+                <label for="addline1">Address Line 1</label>
+            <input type="text" class="form-control" placeholder="address line 1" name="otherInfo.emergencyContactName">
+          </div>
+          </div>
+        <div class="row">
+          <div class="col-1"></div>
+          <div class="col-3">
+                <label for="addcity">City</label>
+            <input type="text" class="form-control" placeholder="city" name="otherInfo.fatherName">
+          </div>
+          <div class="col-3">
+                <label for="addstate">State</label>
+            <input type="text" class="form-control" placeholder="state" name="otherInfo.motherName">
+          </div>          
+        </div>
+        <div class="row">
+        <div class="col-1"></div>
+          <div class="col-3">
+                <label for="addcountry">Country</label>
+            <input type="text" class="form-control" placeholder="country" name="otherInfo.pan">
+          </div>
+          <div class="col-3">
+                   <label for="addpin">Pincode</label>
+               <input type="text" class="form-control" placeholder="pincode" name="otherInfo.passport">
+          </div>
+          </div>
+
+		
+		<br><hr>
+		
+		<hr>
+        <p class="h3" style="margin-left: 20%">Education Info 1</p>
+        <hr>
+ 
+        <div class="row">
+        <div class="col-1"></div>
+          <div class="col-3">
+                <label for="edutype">Education Type</label>
+            <input type="text" class="form-control" placeholder="type" name="otherInfo.emergencyContactNumber">
+          </div>
+          <div class="col-3">
+                <label for="educollege">College Name</label>
+            <input type="text" class="form-control" placeholder="college" name="otherInfo.emergencyContactName">
+          </div>
+          </div>
+        <div class="row">
+          <div class="col-1"></div>
+          <div class="col-3">
+                <label for="edubranch">Branch</label>
+            <input type="text" class="form-control" placeholder="branch" name="otherInfo.fatherName">
+          </div>
+          <div class="col-3">
+                <label for="edudegree">Degree</label>
+            <input type="text" class="form-control" placeholder="degree" name="otherInfo.motherName">
+          </div>          
+        </div>
+        <div class="row">
+        <div class="col-1"></div>
+          <div class="col-3">
+                <label for="eduyop">Year of Passing</label>
+            <input type="text" class="form-control" placeholder="YoP" name="otherInfo.pan">
+          </div>
+          <div class="col-3">
+                   <label for="edupercentage">Percentage</label>
+               <input type="text" class="form-control" placeholder="percentage" name="otherInfo.passport">
+          </div>
+          </div>
+
+		
+		<br>
+		<hr>
+
+		
+		<hr>
+        <p class="h3" style="margin-left: 20%">Education Info 2</p>
+        <hr>
+
+        <div class="row">
+        <div class="col-1"></div>
+          <div class="col-3">
+                <label for="edutype">Education Type</label>
+            <input type="text" class="form-control" placeholder="type" name="otherInfo.emergencyContactNumber">
+          </div>
+          <div class="col-3">
+                <label for="educollege">College Name</label>
+            <input type="text" class="form-control" placeholder="college" name="otherInfo.emergencyContactName">
+          </div>
+          </div>
+        <div class="row">
+          <div class="col-1"></div>
+          <div class="col-3">
+                <label for="edubranch">Branch</label>
+            <input type="text" class="form-control" placeholder="branch" name="otherInfo.fatherName">
+          </div>
+          <div class="col-3">
+                <label for="edudegree">Degree</label>
+            <input type="text" class="form-control" placeholder="degree" name="otherInfo.motherName">
+          </div>          
+        </div>
+        <div class="row">
+        <div class="col-1"></div>
+          <div class="col-3">
+                <label for="eduyop">Year of Passing</label>
+            <input type="text" class="form-control" placeholder="YoP" name="otherInfo.pan">
+          </div>
+          <div class="col-3">
+                   <label for="edupercentage">Percentage</label>
+               <input type="text" class="form-control" placeholder="percentage" name="otherInfo.passport">
+          </div>
+          </div>
+
+		
+		<br>
+		<hr>
+
+		
+		<hr>
+        <p class="h3" style="margin-left: 20%">Experience Info 1</p>
+        <hr>
+
+        <div class="row">
+        <div class="col-1"></div>
+          <div class="col-3">
+                <label for="expcompany">Company Name</label>
+            <input type="text" class="form-control" placeholder="company" name="otherInfo.emergencyContactNumber">
+          </div>
+          <div class="col-3">
+                <label for="expdesign">Designation</label>
+            <input type="text" class="form-control" placeholder="desig" name="otherInfo.emergencyContactName">
+          </div>
+          </div>
+        <div class="row">
+          <div class="col-1"></div>
+          <div class="col-3">
+                <label for="expjdate">Joining Date</label>
+            <input type="text" class="form-control" placeholder="joining date" name="otherInfo.fatherName">
+          </div>
+          <div class="col-3">
+                <label for="expldate">Leaving Date</label>
+            <input type="text" class="form-control" placeholder="leaving date" name="otherInfo.motherName">
+          </div>          
+        </div>
+		
+		<br>
+		<hr>
+
+
+		
+		<hr>
+        <p class="h3" style="margin-left: 20%">Experience Info 2</p>
+        <hr>
+
+        <div class="row">
+        <div class="col-1"></div>
+          <div class="col-3">
+                <label for="expcompany">Company Name</label>
+            <input type="text" class="form-control" placeholder="company" name="otherInfo.emergencyContactNumber">
+          </div>
+          <div class="col-3">
+                <label for="expdesign">Designation</label>
+            <input type="text" class="form-control" placeholder="desig" name="otherInfo.emergencyContactName">
+          </div>
+          </div>
+        <div class="row">
+          <div class="col-1"></div>
+          <div class="col-3">
+                <label for="expjdate">Joining Date</label>
+            <input type="text" class="form-control" placeholder="joining date" name="otherInfo.fatherName">
+          </div>
+          <div class="col-3">
+                <label for="expldate">Leaving Date</label>
+            <input type="text" class="form-control" placeholder="leaving date" name="otherInfo.motherName">
+          </div>          
+        </div>
+		
+		<br>
+		<hr>
+				
 		<div class="row">
 		<div class="col-1"></div>
 			<div class="col-3">
@@ -220,7 +456,8 @@
 				<button type="reset" class="form-control">Reset</button>
 			</div>
 		</div>
-
+     <hr> 
+        <br>
 	</form>
 </body>
 </html>

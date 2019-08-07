@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@Controller
-@RequestMapping("/cookie")
+//@Controller
+//@RequestMapping("/cookie")
 public class CookieController {
 
 	@GetMapping("/getCookiePage")

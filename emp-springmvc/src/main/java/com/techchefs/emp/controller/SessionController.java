@@ -21,8 +21,8 @@ import com.techchefs.emp.dto.UserBean;
 
 import lombok.extern.java.Log;
 @Log
-@Controller
-@RequestMapping("/session")
+//@Controller
+//@RequestMapping("/session")
 public class SessionController {
 	
 

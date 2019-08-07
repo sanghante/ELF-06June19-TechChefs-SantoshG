@@ -21,8 +21,8 @@ import com.techchefs.emp.dto.EmployeeInfoBean;
 import lombok.extern.java.Log;
 
 @Log
-@Controller
-@RequestMapping("/employee123")
+//@Controller
+//@RequestMapping("/employee123")
 public class EmployeeControllerold {
 	
 	@InitBinder
