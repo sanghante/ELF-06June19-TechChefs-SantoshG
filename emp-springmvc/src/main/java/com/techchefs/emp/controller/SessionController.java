@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.techchefs.emp.dao.EmployeeDAO;
 import com.techchefs.emp.dao.EmployeeDAOFactoryold;
-import com.techchefs.emp.dto.EmployeeInfoBean;
+//import com.techchefs.emp.dto.EmployeeInfoBean;
 import com.techchefs.emp.dto.UserBean;
+import com.techchefs.emp.onetoone.EmployeeInfoBean;
 
 import lombok.extern.java.Log;
 @Log

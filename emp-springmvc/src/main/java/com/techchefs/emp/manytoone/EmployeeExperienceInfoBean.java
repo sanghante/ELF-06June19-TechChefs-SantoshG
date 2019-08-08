@@ -18,8 +18,6 @@ public class EmployeeExperienceInfoBean implements Serializable{
 	
 	@EmbeddedId
 	private EmployeeExperiencePKBean experiencePKBean; 
-	@Column(name= "company_name")
-	private String companyName;
 	@Column(name= "designation")
 	private String designation;
 	@Column(name= "joining_Date")

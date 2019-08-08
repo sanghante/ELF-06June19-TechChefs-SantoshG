@@ -1,5 +1,5 @@
-<%@page import="com.techchefs.emp.dto.EmployeeOtherInfoBean"%>
-<%@page import="com.techchefs.emp.dto.EmployeeInfoBean"%>
+<%@page import="com.techchefs.emp.onetoone.EmployeeOtherInfoBean"%>
+<%@page import="com.techchefs.emp.onetoone.EmployeeInfoBean"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <html>
@@ -346,16 +346,16 @@ body {
 								<div class="col-md-6">
 									<label>Department ID</label>
 								</div>
-								<div class="col-md-6">
+								<%-- <div class="col-md-6">
 									<p>${empBean.departmentId}</p>
-								</div>
+								</div> --%>
 							</div>
 							<div class="row">
 								<div class="col-md-6">
 									<label>Manager Name</label>
 								</div>
 								<div class="col-md-6">
-									<p>${empBean.managerId}</p>
+									<p>${empBean.managerId.id}</p>
 								</div>
 							</div>
 							
@@ -366,7 +366,7 @@ body {
 									<label>Father Name</label>
 								</div>
 								<div class="col-md-6">
-									<p>${empBean.otherInfo.fatherName}</p>
+									<p>${empBean.otherInfoBean.fatherName}</p>
 								</div>
 							</div>
 							<div class="row">
@@ -374,7 +374,7 @@ body {
 									<label>Mother Name</label>
 								</div>
 								<div class="col-md-6">
-									<p>${empBean.otherInfo.motherName}</p>
+									<p>${empBean.otherInfoBean.motherName}</p>
 								</div>
 							</div>
 							<div class="row">
@@ -382,7 +382,7 @@ body {
 									<label>Emergency Contact Name</label>
 								</div>
 								<div class="col-md-6">
-									<p>${empBean.otherInfo.emergencyContactName}</p>
+									<p>${empBean.otherInfoBean.emergencyContactName}</p>
 								</div>
 							</div>
 							<div class="row">
@@ -390,7 +390,7 @@ body {
 									<label>Emergency Contact Number</label>
 								</div>
 								<div class="col-md-6">
-									<p>${empBean.otherInfo.emergencyContactNumber}</p>
+									<p>${empBean.otherInfoBean.emergencyContactNumber}</p>
 								</div>
 							</div>
 							<div class="row">
@@ -398,7 +398,7 @@ body {
 									<label>Aadhar Number</label>
 								</div>
 								<div class="col-md-6">
-									<p>${empBean.otherInfo.aadhar}</p>
+									<p>${empBean.otherInfoBean.aadhar}</p>
 								</div>
 							</div>
 							<div class="row">
@@ -406,7 +406,7 @@ body {
 									<label>Passport Number</label>
 								</div>
 								<div class="col-md-6">
-									<p>${empBean.otherInfo.passport}</p>
+									<p>${empBean.otherInfoBean.passport}</p>
 								</div>
 							</div>
 							<div class="row">
@@ -414,7 +414,7 @@ body {
 									<label>PAN Number</label>
 								</div>
 								<div class="col-md-6">
-									<p>${empBean.otherInfo.pan}</p>
+									<p>${empBean.otherInfoBean.pan}</p>
 								</div>
 							</div>
 							<div class="row">
@@ -422,7 +422,7 @@ body {
 									<label>Marital Status</label>
 								</div>
 								<div class="col-md-6">
-									<p>${empBean.otherInfo.ismarried}
+									<p>${empBean.otherInfoBean.ismarried}
 									</p>
 								</div>
 							</div>
@@ -431,7 +431,7 @@ body {
 									<label>Blood Group</label>
 								</div>
 								<div class="col-md-6">
-									<p>${empBean.otherInfo.bloodGrp}</p>
+									<p>${empBean.otherInfoBean.bloodGrp}</p>
 								</div>
 							</div>
 							<div class="row">
@@ -439,7 +439,7 @@ body {
 									<label>Religion</label>
 								</div>
 								<div class="col-md-6">
-									<p>${empBean.otherInfo.religion}</p>
+									<p>${empBean.otherInfoBean.religion}</p>
 								</div>
 							</div>
 							<div class="row">
@@ -447,18 +447,18 @@ body {
 									<label>Nationality</label>
 								</div>
 								<div class="col-md-6">
-									<p>${empBean.otherInfo.nationality}</p>
+									<p>${empBean.otherInfoBean.nationality}</p>
 								</div>
 							</div>
-							<div class="row">
+<%-- 							<div class="row">
 								<div class="col-md-6">
 									<label>Spouse Name</label>
 								</div>
 								<div class="col-md-6">
-									<p>${empBean.otherInfo.spouseName}</p>
+									<p>${empBean.otherInfoBean.spouseName}</p>
 								</div>
 							</div>
-							
+ --%>							
 
 					</div>
 				</div>

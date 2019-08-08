@@ -16,7 +16,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.techchefs.emp.dao.EmployeeDAO;
 import com.techchefs.emp.dao.EmployeeDAOFactoryold;
-import com.techchefs.emp.dto.EmployeeInfoBean;
+//import com.techchefs.emp.dto.EmployeeInfoBean;
+import com.techchefs.emp.onetoone.EmployeeInfoBean;
 
 import lombok.extern.java.Log;
 

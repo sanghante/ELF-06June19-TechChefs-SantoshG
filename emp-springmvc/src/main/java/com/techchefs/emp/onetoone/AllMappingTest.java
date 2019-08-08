@@ -62,24 +62,24 @@ public class AllMappingTest {
 //		impl.createTrainingInfo(trainingInfoBean);
 //	}
 	
-	public static void main(String[] args) {
-		HibernateImpl impl = new HibernateImpl();
-		
-		DepartmentInfoBean deptBean = new DepartmentInfoBean();
-		deptBean.setDeptId(10);
-		deptBean.setDeptName("HR");
-		
-		//impl.createDepartment(deptBean);
-		
-		EmployeeInfoBean bean = new EmployeeInfoBean();
-		bean.setId(10);
-		bean.setName("Lakshmi");		
-		bean.setDesignation("MD");
-		bean.setDepartmentBean(deptBean);
-		
-		impl.createEmployee(bean);
-		
-	}
+//	public static void main(String[] args) {
+//		HibernateImpl impl = new HibernateImpl();
+//		
+//		DepartmentInfoBean deptBean = new DepartmentInfoBean();
+//		deptBean.setDeptId(10);
+//		deptBean.setDeptName("HR");
+//		
+//		//impl.createDepartment(deptBean);
+//		
+//		EmployeeInfoBean bean = new EmployeeInfoBean();
+//		bean.setId(10);
+//		bean.setName("Lakshmi");		
+//		bean.setDesignation("MD");
+//		//bean.setDepartmentBean(deptBean);
+//		
+//		impl.createEmployee(bean);
+//		
+//	}
 
 	/*
 	 * public static void main(String[] args) { SimpleDateFormat dateFormat = new

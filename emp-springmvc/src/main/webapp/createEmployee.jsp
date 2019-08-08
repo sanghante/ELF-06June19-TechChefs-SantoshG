@@ -91,7 +91,7 @@
 			</div>
 			<div class="col-3">
 				<label for="empInfo">Department Id</label>
-				<input name="departmentBean.deptId" type="text" class="form-control" placeholder="Department Id">
+				<input name="departmentId" type="text" class="form-control" placeholder="Department Id">
 			</div>
 		</div>
 		<div class="row">
@@ -390,7 +390,7 @@
         <div class="col-1"></div>
           <div class="col-3">
                 <label for="expcompany">Company Name</label>
-            <input type="text" class="form-control" placeholder="company" name="experienceInfoBeans[0].companyName">
+            <input type="text" class="form-control" placeholder="company" name="experienceInfoBeans[0].experiencePKBean.companyName">
           </div>
           <div class="col-3">
                 <label for="expdesign">Designation</label>
@@ -422,7 +422,7 @@
         <div class="col-1"></div>
           <div class="col-3">
                 <label for="expcompany">Company Name</label>
-            <input type="text" class="form-control" placeholder="company" name="experienceInfoBeans[1].companyName">
+            <input type="text" class="form-control" placeholder="company" name="experienceInfoBeans[1].experiencePKBean.companyName">
           </div>
           <div class="col-3">
                 <label for="expdesign">Designation</label>

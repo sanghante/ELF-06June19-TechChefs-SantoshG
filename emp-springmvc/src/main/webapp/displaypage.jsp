@@ -1,5 +1,5 @@
-<%@page import="com.techchefs.emp.dto.EmployeeOtherInfoBean"%>
-<%@page import="com.techchefs.emp.dto.EmployeeInfoBean"%>
+<%@page import="com.techchefs.emp.dto.EmployeeOtherInfoBean1"%>
+<%@page import="com.techchefs.emp.dto.EmployeeInfoBean1"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <html>

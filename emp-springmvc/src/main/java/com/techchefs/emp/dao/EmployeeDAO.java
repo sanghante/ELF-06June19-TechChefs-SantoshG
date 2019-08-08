@@ -2,7 +2,9 @@ package com.techchefs.emp.dao;
 
 import java.util.ArrayList;
 
-import com.techchefs.emp.dto.EmployeeInfoBean;
+import com.techchefs.emp.onetoone.EmployeeInfoBean;
+
+//import com.techchefs.emp.dto.EmployeeInfoBean;
 
 public interface EmployeeDAO {
 

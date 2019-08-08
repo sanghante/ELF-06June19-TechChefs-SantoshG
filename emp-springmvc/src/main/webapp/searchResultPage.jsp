@@ -1,5 +1,5 @@
 <%@page import="org.springframework.ui.ModelMap"%>
-<%@page import="com.techchefs.emp.dto.EmployeeInfoBean"%>
+<%@page import="com.techchefs.emp.dto.EmployeeInfoBean1"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -19,7 +19,7 @@
 </div>
 
 <%
-	List<EmployeeInfoBean> beans = (List<EmployeeInfoBean>)request.getAttribute("beanList");
+	List<EmployeeInfoBean1> beans = (List<EmployeeInfoBean1>)request.getAttribute("beanList");
 %>
 
 	<div class="container emp-profile">
@@ -51,8 +51,12 @@
 				</div>
 				<ol>
 				<ul class="nav nav-tabs" id="myTab" role="tablist" >		
-				<% if (beans!=null) { %>					
-				<% for(EmployeeInfoBean emp: beans) { %>
+				<%
+							if (beans!=null) {
+						%>					
+				<%
+										for(EmployeeInfoBean1 emp: beans) {
+									%>
 					<ul ><%=emp.getName()%><a href='./display?empId=<%=emp.getId()%>'><%=emp.getId()%></a> </ul>				
 				
 				<%}

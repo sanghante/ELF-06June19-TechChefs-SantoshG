@@ -16,7 +16,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.techchefs.emp.dao.EmployeeDAO;
-import com.techchefs.emp.dto.EmployeeInfoBean; 
+//import com.techchefs.emp.dto.EmployeeInfoBean; 
+import com.techchefs.emp.onetoone.EmployeeInfoBean;
 
 @Controller
 @RequestMapping("/login")

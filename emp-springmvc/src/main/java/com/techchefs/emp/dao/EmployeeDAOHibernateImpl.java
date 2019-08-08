@@ -12,8 +12,10 @@ import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.techchefs.emp.dto.EmployeeInfoBean;
-import com.techchefs.emp.util.HibernateUtil;
+import com.techchefs.emp.onetoone.EmployeeInfoBean;
+
+//import com.techchefs.emp.dto.EmployeeInfoBean;
+//import com.techchefs.emp.util.HibernateUtil;
 
 import lombok.extern.java.Log;
 
@@ -81,8 +83,15 @@ public class EmployeeDAOHibernateImpl implements EmployeeDAO {
 			txn.commit();
 			return true;
 		} catch (Exception e) {
-			txn.rollback();
-			e.printStackTrace();
+			if(txn != null) {
+				try {
+					txn.rollback();
+				}catch(Exception te) {
+					te.printStackTrace();
+				}
+			}
+				e.printStackTrace();
+			
 			return false;
 		}
 	}

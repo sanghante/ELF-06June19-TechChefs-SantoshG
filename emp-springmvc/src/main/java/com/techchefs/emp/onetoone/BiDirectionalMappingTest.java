@@ -36,7 +36,7 @@ public class BiDirectionalMappingTest {
 		}
 
 		EmployeeInfoBean infoBean = new EmployeeInfoBean();
-		infoBean.setId(20);
+		infoBean.setId(40);
 		infoBean.setName("Lakshmi");		
 		infoBean.setDesignation("CEO");		
 		
@@ -102,16 +102,15 @@ public class BiDirectionalMappingTest {
 		educationInfoBean2.setYearOfPassing(1997);
 		 
 		EmployeeExperiencePKBean experiencePKBean1 = new EmployeeExperiencePKBean();
-		experiencePKBean1.setExpId(1);
 		experiencePKBean1.setInfoBean(infoBean);
+		experiencePKBean1.setCompanyName("Cognizant");
 		 
 		EmployeeExperiencePKBean experiencePKBean2 = new EmployeeExperiencePKBean();
-		experiencePKBean2.setExpId(2);
 		experiencePKBean2.setInfoBean(infoBean);
+		experiencePKBean2.setCompanyName("SPI");
 		 
 		EmployeeExperienceInfoBean experienceInfoBean1 = new EmployeeExperienceInfoBean();
 		experienceInfoBean1.setExperiencePKBean(experiencePKBean1);
-		experienceInfoBean1.setCompanyName("Cognizant");
 		experienceInfoBean1.setDesignation("SA");
 		experienceInfoBean1.setJoiningDate(dateJoin);
 		experienceInfoBean1.setLeavingDate(dateJoin);
@@ -119,7 +118,6 @@ public class BiDirectionalMappingTest {
 		EmployeeExperienceInfoBean experienceInfoBean2 = new
 		EmployeeExperienceInfoBean();
 		experienceInfoBean2.setExperiencePKBean(experiencePKBean2);
-		experienceInfoBean2.setCompanyName("SPI");
 		experienceInfoBean2.setDesignation("SPA");
 		experienceInfoBean2.setJoiningDate(dateJoin);
 		experienceInfoBean2.setLeavingDate(dateJoin);
@@ -137,7 +135,7 @@ public class BiDirectionalMappingTest {
 		infoBean.setAddressInfoBeans(Arrays.asList(addressInfoBean1, addressInfoBean2));
 		infoBean.setEducationInfoBeans(Arrays.asList(educationInfoBean1, educationInfoBean2));
 		infoBean.setExperienceInfoBeans(Arrays.asList(experienceInfoBean1, experienceInfoBean2));
-		infoBean.setTrainingInfoBeans(Arrays.asList(trainingInfoBean));
+		//infoBean.setTrainingInfoBeans(Arrays.asList(trainingInfoBean));
 		
 		HibernateImpl impl = new HibernateImpl();
 		impl.createEmployee(infoBean);

@@ -17,8 +17,8 @@ import lombok.Data;
 public class EmployeeExperiencePKBean implements Serializable{
 
 	@ManyToOne
-	@JoinColumn (name = "id")
+	@JoinColumn (name = "ID")
 	private EmployeeInfoBean infoBean;
-	@Column(name = "exp_id")
-	private int expId;
+	@Column(name= "company_name")
+	private String companyName;
 }

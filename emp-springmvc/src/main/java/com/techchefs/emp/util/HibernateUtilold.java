@@ -4,8 +4,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import com.techchefs.emp.dto.EmployeeInfoBean;
-import com.techchefs.emp.dto.EmployeeOtherInfoBean;
+import com.techchefs.emp.dto.EmployeeInfoBean1;
+import com.techchefs.emp.dto.EmployeeOtherInfoBean1;
 
 public final class HibernateUtilold {
 
@@ -16,8 +16,8 @@ public final class HibernateUtilold {
 	private static SessionFactory buildSessionFactory() {
 		return new Configuration()
 				.configure()
-				.addAnnotatedClass(EmployeeInfoBean.class)
-				.addAnnotatedClass(EmployeeOtherInfoBean.class)
+				.addAnnotatedClass(EmployeeInfoBean1.class)
+				.addAnnotatedClass(EmployeeOtherInfoBean1.class)
 				.buildSessionFactory();		
 	}
 	
