@@ -1,5 +1,7 @@
 package com.tc.empspringrest.beans;
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
 
@@ -15,5 +17,7 @@ public class EmployeeResponse {
 	private String message;
 	
 	private String description;
+	
+	List<EmployeeInfoBean> beans;
 
 }

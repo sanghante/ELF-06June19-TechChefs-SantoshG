@@ -1,8 +1,13 @@
+<%@page import="org.springframework.web.servlet.support.ServletUriComponentsBuilder"%>
 <%@page import="org.springframework.ui.ModelMap"%>
 <%@page import="com.techchefs.emp.dto.EmployeeInfoBean1"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+        
+   <% 
+   		String baseURL = ServletUriComponentsBuilder.fromCurrentContextPath().build().toUriString();
+   %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +18,7 @@
 
 
 <div class='container emp-profile'>
-<form action="../validate/empSearch" method="get">
+<form action="<%=baseURL%>/validator/validate/employee/search" method="get">
 <span style="color:blue">Search Employee Id : </span><input type="text" name="userId"/><!-- <input hidden type="text" name="url" value="search"/> -->
 <input type="submit" value="Search"/></form>
 </div>

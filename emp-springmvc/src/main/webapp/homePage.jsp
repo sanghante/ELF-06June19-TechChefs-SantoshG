@@ -1,7 +1,12 @@
+<%@page import="org.springframework.web.servlet.support.ServletUriComponentsBuilder"%>
 <%@page import="com.techchefs.emp.onetoone.EmployeeOtherInfoBean"%>
 <%@page import="com.techchefs.emp.onetoone.EmployeeInfoBean"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
+   <% 
+   		String baseURL = ServletUriComponentsBuilder.fromCurrentContextPath().build().toUriString();
+   %>
 <html>
 <head>
 <title>Home Page</title>
@@ -202,7 +207,7 @@ body {
 <br><br>
 <hr>
 <div class='container emp-profile'>
-<form action="../validator/validate/employee/search" method="get">
+<form action="<%=baseURL%>/validator/validate/employee/search" method="get">
 <span style="color:blue">Search Employee Id : </span><input type="text" name="userId"/><!-- <input hidden type="text" name="url" value="search"/> -->
 <input type="submit" value="Search"/></form>
 </div>

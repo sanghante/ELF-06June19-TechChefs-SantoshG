@@ -1,4 +1,4 @@
-package com.tc.empspringrest.dao;
+package com.tc.empspringmvc.dao;
 
 import java.util.Arrays;
 import java.util.List;
@@ -9,7 +9,7 @@ import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.tc.empspringrest.beans.EmployeeInfoBean;
+import com.tc.empspringmvc.beans.EmployeeInfoBean;
 
 import lombok.extern.java.Log;
 
@@ -65,6 +65,9 @@ public final class EmployeeDAOHibernateImpl implements EmployeeDao {
 			// 4. Interact with the DB via Session
 			EmployeeInfoBean bean = session.get(EmployeeInfoBean.class, id);
 
+			// 5. Close Session
+			session.close();
+
 			return bean;
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -105,11 +108,11 @@ public final class EmployeeDAOHibernateImpl implements EmployeeDao {
 	@Override
 	public boolean deleteEmployeeInfo(int id) {
 		Transaction txn = null;
-		//EmployeeInfoBean bean = new EmployeeInfoBean();
-		//bean.setId(id);
-		EmployeeInfoBean bean = getEmployeeInfo(id);
+		EmployeeInfoBean bean = new EmployeeInfoBean();
+		bean.setId(id);
 		try (Session session = sessionFactory.openSession();) {
-			txn = session.beginTransaction();			
+
+			txn = session.beginTransaction();
 			session.delete(bean);
 			txn.commit();
 			return true;
